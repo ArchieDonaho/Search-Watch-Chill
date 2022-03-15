@@ -10,50 +10,64 @@
 
 <body>
 	<main class="tile is-ancestor">
-		<div class="tile is-vertical">
+		<div class="tile is-vertical is-12">
 			<div class="tile"></div>
-			<div class="tile is-box is-parent">
+			<div class="tile is-vertical box is-parent">
 				<h1>logo</h1>
 			</div>
-			<div class="tile is-box is-parent">
+			<div class="tile is-vertical box is-parent">
 				<h2>movie history</h2>
 			</div>
-			<div class="tile is-box is-parent">
+			<div class="tile is-vertical box is-parent">
+				<!--need columns-->
 				<h2>thumbnails</h2>
-				<div class="tile is-box is-child"></div>
-			</div>
-		</div>
-
-		<div class="tile is-box">search</div>
-
-		<div class="tile is-parent">
-			<div child="tile is-child">
-				<div class="tile is-box">
-					<h3>genre</h3>
-				</div>
-				<div class="tile is-box">
-					<h3>rating</h3>
-				</div>
-				<div class="tile is-box">
-					<h3>views</h3>
+				<div class="tile box is-child">
+					<h3>image</h3>
 				</div>
 			</div>
-		</div>
-		<div class="tile is-parent is-box">
-			<div class="tile is-child is-box">
-				<div class="tile is-box">poster</div>
-				<div class="tile is-box">trailer</div>
+
+
+			<div class="tile box">search</div>
+
+			<div class="tile is-parent box is-12">
+				<div child="tile is-child">
+					<!--columns-->
+					<div class="tile box is-3">
+						<h3>genre</h3>
+					</div>
+					<div class="tile box is-3">
+						<h3>rating</h3>
+					</div>
+					<div class="tile box is-3">
+						<h3>views</h3>
+					</div>
+				</div>
+			</div>
+			<div class="tile is-parent box is-12">
+				<div class="tile is-child box">
+					<div class="tile box">
+						<h4>poster</h4>>
+					</div>
+					<div class="tile box">
+						<h4>trailer here</h4>
+					</div>
+				</div>
+			</div>
+
+			<div class="tile is-verticle is-parent">
+				<article class="tile is-child box is-12">
+					<div class="tile">
+						<h3>description/synopsis</h3>
+					</div>
+					<div class="tile">
+						<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi vero cupiditate dolorum unde excepturi
+							dignissimos rerum repellat veritatis praesentium. Soluta odit nesciunt ex quisquam debitis est, porro
+							ipsam alias distinctio.
+						</p>
+					</div>
+				</article>
 			</div>
 		</div>
-
-		<div class="tile is parent is-box">
-			<div class="tile is-box">
-				<h3>movie description</h3>
-				<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi vero cupiditate dolorum unde excepturi dignissimos rerum repellat veritatis praesentium. Soluta odit nesciunt ex quisquam debitis est, porro ipsam alias distinctio.
-				</p>
-			</div>
-		</div>
-
 
 	</main>
 	<script src="./assets/js/script.js"></script>
