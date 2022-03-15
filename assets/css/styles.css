@@ -1,3 +1,7 @@
 body {
-    
+    background-image: url("../images/theatre-wallpaper.png");
+}
+
+.logo {
+    background-image: url("../images/marquee.jpg");
 }
