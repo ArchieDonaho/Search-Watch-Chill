@@ -2,12 +2,13 @@
   background-image: url("../images/theatre-wallpaper.png");
 }
 
-
-
 .marquee {
   background-image: url("../images/marquee.png");
 }
 
+.intro  {
+  padding-left: 40px;
+}
 
 /* main {
   width: auto;

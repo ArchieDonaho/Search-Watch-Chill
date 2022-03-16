@@ -14,39 +14,36 @@
 
 		<div class="tile is-vertical box background">
 			<section class="tile is-parent box marquee">
-				<div class="hero is-fullheight">
+				<div class="hero is-fullheight is-12">
+					<!-- BEGIN HERO -->
+
 					<div class="hero-body">
 
-						<div class="columns is-mobile">
-							<div class="column is-full is-offset-one-quarter box">
-								<h1 class="title is-1">Search</h1>
-							</div>
+						<div class="tile is-parent is-6">
+							<h2 class="title is-1 has-text-white">Search</h2>
 						</div>
-						<div class="columns is-mobile">
-							<div class="column is-full is-offset-one-quarter box">
-								<h1 class="title is-1">Watch</h1>
-							</div>
-						</div>
-						<div class="columns is-mobile">
-							<div class="column is-full is-offset-one-quarter box">
-								<h1 class="title is-1">Chill</h1>
-							</div>
+						<div class="tile is-parent is-6">
+							<h2 class="title is-1 has-text-white">Watch</h2>
 						</div>
 
+						<div class="tile is-parent is-6">
+							<h2 class="title is-1 has-text-white">Chill</h2>
+						</div>
 
+					</div>
 
+					<div class="hero-foot subtitle is-2 has-text-centered">
 
-
-
-
-						<!-- <h1>logo instructions for search</h1>
-						<p>
+						<p class="intro">
 							As a viewer of movies,
 							I want to be able to search for movies based on selected criteria
 							When a movie is found,
 							I want to see a movie poster, trailer, and summary of said movie.
-						</p> -->
+						</p>
 					</div>
+
+
+					<!--END HERO  -->
 				</div>
 			</section>
 			<!-- Saved searches/search history -->
@@ -55,7 +52,7 @@
 			</div>
 			<div class="tile is-parent">
 				<div class="columns">
-					<div class="column hidden">
+					<div class="column hidden thumbnail">
 						<figure class="image is-128x128">
 							<img src="https://bulma.io/images/placeholders/128x128.png">
 						</figure>
@@ -85,33 +82,18 @@
 			</div>
 
 			<!-- <div class="tile box">search</div> -->
-
 			<div class="tile is-parent box is-12">
 				<div child="tile is-child box">
 					<div class="columns is-centered">
-						<!-- <div class="column box">
-							<h3>genre</h3>
-							<ul>
-								<li>comedy</li>
-								<li>drama</li>
-								<li>sci-fi</li>
-								<li>mystery</li>
-							</ul>
-						</div>
-						<div class="column box">
-							<h3>rating</h3>
-						</div>
-						<div class="column box">
-							<h3>views</h3>
-						</div> -->
 					</div>
 				</div>
 			</div>
+
 			<!-- poster and video links -->
 			<div class="tile is-parent is-12">
 				<div class="tile is-child">
 					<div class="columns is-8 is-vcentered">
-						<div class="column ">
+						<div class="column is-offset-2">
 							<img id="movie-poster"></img>
 						</div>
 						<div class="column">
@@ -141,7 +123,6 @@
 				</article>
 			</div>
 		</div>
-		<!-- </div> -->
 
 	</main>
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
