@@ -3,7 +3,40 @@
 // http://www.omdbapi.com/?i=tt3896198&apikey=a6453f4e
 
 // themoviedb key
-// 983c87bc5226584d6913b9818f37ade3
+// https://api.themoviedb.org/3/search/movie?api_key=983c87bc5226584d6913b9818f37ade3
+
+//get a detailed description of the movie
+var getMovieDescription = function(movieName) {
+    link = "http://www.omdbapi.com/?apikey=a6453f4e&t=" + movieName + "&plot=short";
+
+    fetch(link).then(function(response){
+        //if we get a 2XX status code
+        if(response.ok){
+            //convert response
+            response.json().then(function(data){
+                console.log(data);
+                console.log(data.plot);
+
+                //add the description
+                $("#description").text(data.Plot);
+                //add the release date
+                $("#released").text("Released: " + data.Released);
+                //display all scores
+                for(var i=0; i<data.Ratings.length; i++){
+                    var score = $("<li>");
+                    score.text(data.Ratings[i].Source + ": " + data.Ratings[i].Value);
+                    $("#ratings").append(score)
+                }
+                //display box office profits
+                $("#profits").text("Box Office Profit: " + data.BoxOffice);
+                //display awards
+                $("#awards").text("Awards: " + data.Awards);
+            })
+        } else {
+            alert("could not retrieve description")
+        }
+    })
+}
 
 //obtains a movie based on the genre selected
 var getGenre = function(genreId){
@@ -12,8 +45,9 @@ var getGenre = function(genreId){
     fetch(link).then(function(response){
         //if we get a 2XX status code
         if(response.ok){
+            //convert response
             response.json().then(function(data){
-                console.log(data);
+                // console.log(data);
             })
         } else {
             alert("Please Try Again")
@@ -28,9 +62,10 @@ var getMovieId = function(movieName){
     fetch(link).then(function(response){
         //if we get a 2XX status code
         if(response.ok){
+            //convert response
             response.json().then(function(data){
 
-                console.log(data);
+                // console.log(data);
 
                 //obtain the details of the movie
                 getMovieDetails(data.results[0].id);
@@ -51,6 +86,7 @@ var getMovieVideo = function(movieId) {
     fetch(link).then(function(response){
         //if we get a 2XX status code
         if(response.ok){
+            //convert response
             response.json().then(function(data){
                 //embed the trailer youtube video to the webpage
                 $("#trailer").attr("src", "https://www.youtube.com/embed/" + data.results[0].key)
@@ -68,9 +104,10 @@ var getMovieDetails = function(movieId){
     fetch(link).then(function(response){
         //if we get a 2XX status code
         if(response.ok){
+            //convert response
             response.json().then(function(movie){
-                console.log(movie.imdb_id)
-                console.log(movie);
+                // console.log(movie.imdb_id)
+                // console.log(movie);
                 //display the movie poster to the html
                 $("#movie-poster").attr("src", "http://image.tmdb.org/t/p/w500/" + movie.poster_path);
                 //test display the card
@@ -86,4 +123,5 @@ var getMovieDetails = function(movieId){
 var movie = "shrek";
 
 getMovieId(movie);
+getMovieDescription(movie);
 getGenre();
