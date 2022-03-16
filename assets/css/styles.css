@@ -1,4 +1,15 @@
-body  {
-  background-image: url("./assets/imagest/theatre-wallpaper.png");
+.background  {
+  background-image: url("../images/theatre-wallpaper.png");
+}
+
+.background-2  {
+  background-image: url("../images/theatre-wallpaper-2.png");
 
 }
+
+
+main {
+  width: auto;
+  height: auto;
+}
+
