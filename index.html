@@ -12,28 +12,47 @@
 <body>
 	<main class="tile is-ancestor">
 
+		<div class="tile is-vertical box background">
+			<section class="tile is-parent box marquee">
+				<div class="hero is-fullheight is-12">
+					<!-- BEGIN HERO -->
 
-		<div class="tile is-vertical is-12 box">
-			<!-- <div class="tile"> -->
-			<!-- change to hero -->
-			<section class="tile is-parent box">
-				<div class="hero is-medium">
 					<div class="hero-body">
 
-							<h1>logo or hero</h1>
+						<div class="tile is-parent is-6">
+							<h2 class="title is-1 has-text-white">Search</h2>
 						</div>
+						<div class="tile is-parent is-6">
+							<h2 class="title is-1 has-text-white">Watch</h2>
+						</div>
+
+						<div class="tile is-parent is-6">
+							<h2 class="title is-1 has-text-white">Chill</h2>
+						</div>
+
+					</div>
+
+					<div class="hero-foot subtitle is-2 has-text-centered">
+
+						<p class="intro">
+							As a viewer of movies,
+							I want to be able to search for movies based on selected criteria
+							When a movie is found,
+							I want to see a movie poster, trailer, and summary of said movie.
+						</p>
+					</div>
+
+
+					<!--END HERO  -->
 				</div>
 			</section>
-			<div class="tile is-parent box ">
-				<h2>movie history</h2>
+			<!-- Saved searches/search history -->
+			<div class="tile is-parent">
+				<h2 class="title is-3 has-text-white">Saved Searches</h2>
 			</div>
-
-			<div class="tile box is-parent">
-
-				<!-- Saved searches/search history -->
-
+			<div class="tile is-parent">
 				<div class="columns">
-					<div class="column ">
+					<div class="column">
 						<figure class="image is-128x128">
 							<img class="test-save" src="">
 						</figure>
@@ -62,42 +81,25 @@
 				</div>
 			</div>
 
-			<div class="tile box">search</div>
-
+			<!-- <div class="tile box">search</div> -->
 			<div class="tile is-parent box is-12">
 				<div child="tile is-child box">
 					<div class="columns is-centered">
-						<div class="column box">
-							<h3>genre</h3>
-							<ul>
-								<li>comedy</li>
-								<li>drama</li>
-								<li>sci-fi</li>
-								<li>mystery</li>
-
-							</ul>
-						</div>
-						<div class="column box">
-							<h3>rating</h3>
-						</div>
-						<div class="column box">
-							<h3>views</h3>
-						</div>
 					</div>
 				</div>
 			</div>
-			<div class="tile is-parent box is-12">
-				<div class="tile is-child box">
-					<div class="columns is-8 box">
-						<div class="column box">
+
+			<!-- poster and video links -->
+			<div class="tile is-parent is-12">
+				<div class="tile is-child">
+					<div class="columns is-8 is-vcentered">
+						<div class="column is-offset-2">
 							<img id="movie-poster"></img>
 						</div>
-						<div class="column box">
-							<h4>trailer here</h4>
-							<figure class="image is-16by9">
-								<iframe id="trailer" class="has-ratio" width="640" height="360"
-									frameborder="0" allowfullscreen></iframe>
-							</figure>
+						<div class="column">
+							<!-- <figure class="image is-16by9"> -->
+							<iframe id="trailer" class="has-ratio" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+							<!-- </figure> -->
 						</div>
 					</div>
 				</div>
@@ -117,11 +119,9 @@
 							maxime, amet dolorem doloribus consequuntur totam optio minima nemo necessitatibus at magni provident
 							corporis fuga quam inventore.
 						</p>
-
 					</div>
 				</article>
 			</div>
-		</div>
 		</div>
 
 	</main>
