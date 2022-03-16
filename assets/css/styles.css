@@ -7,9 +7,13 @@
 
 }
 
+.marquee {
+  background-image: url("../images/marquee.png");
+}
 
-main {
+
+/* main {
   width: auto;
   height: auto;
-}
+} */
 
