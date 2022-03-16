@@ -24,7 +24,7 @@ $("#find-movie-btn").click(function() {
   $(".modal").addClass("is-active")
 });
 
-$(".modal.close").click(function() {
+$(".modal-close").click(function() {
   $(".modal").removeClass("is-active")
 });
 
