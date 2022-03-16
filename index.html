@@ -12,35 +12,50 @@
 <body>
 	<main class="tile is-ancestor">
 
-
 		<div class="tile is-vertical box background">
-			<!-- <div class="tile"> -->
-			<!-- change to hero -->
 			<section class="tile is-parent box marquee">
-				<div class="hero is-medium">
+				<div class="hero is-fullheight">
 					<div class="hero-body">
 
-						<h1>logo instructions for search</h1>
+						<div class="columns is-mobile">
+							<div class="column is-full is-offset-one-quarter box">
+								<h1 class="title is-1">Search</h1>
+							</div>
+						</div>
+						<div class="columns is-mobile">
+							<div class="column is-full is-offset-one-quarter box">
+								<h1 class="title is-1">Watch</h1>
+							</div>
+						</div>
+						<div class="columns is-mobile">
+							<div class="column is-full is-offset-one-quarter box">
+								<h1 class="title is-1">Chill</h1>
+							</div>
+						</div>
+
+
+
+
+
+
+
+						<!-- <h1>logo instructions for search</h1>
 						<p>
 							As a viewer of movies,
 							I want to be able to search for movies based on selected criteria
 							When a movie is found,
 							I want to see a movie poster, trailer, and summary of said movie.
-						</p>
-
-
+						</p> -->
 					</div>
 				</div>
 			</section>
-			<div class="tile is-parent box">
-				<h2>Saved Searches</h2>
+			<!-- Saved searches/search history -->
+			<div class="tile is-parent">
+				<h2 class="title is-3 has-text-white">Saved Searches</h2>
 			</div>
-
-				<!-- Saved searches/search history -->
-
-			<div class="tile box is-parent background-2">
+			<div class="tile is-parent">
 				<div class="columns">
-					<div class="column ">
+					<div class="column hidden">
 						<figure class="image is-128x128">
 							<img src="https://bulma.io/images/placeholders/128x128.png">
 						</figure>
@@ -69,7 +84,7 @@
 				</div>
 			</div>
 
-			<div class="tile box">search</div>
+			<!-- <div class="tile box">search</div> -->
 
 			<div class="tile is-parent box is-12">
 				<div child="tile is-child box">
@@ -92,16 +107,16 @@
 					</div>
 				</div>
 			</div>
+			<!-- poster and video links -->
 			<div class="tile is-parent is-12">
 				<div class="tile is-child">
-					<div class="columns is-8">
+					<div class="columns is-8 is-vcentered">
 						<div class="column ">
 							<img id="movie-poster"></img>
 						</div>
 						<div class="column">
 							<!-- <figure class="image is-16by9"> -->
-								<iframe id="trailer" class="has-ratio" width="640" height="360"
-									frameborder="0" allowfullscreen></iframe>
+							<iframe id="trailer" class="has-ratio" width="640" height="360" frameborder="0" allowfullscreen></iframe>
 							<!-- </figure> -->
 						</div>
 					</div>
@@ -122,16 +137,16 @@
 							maxime, amet dolorem doloribus consequuntur totam optio minima nemo necessitatibus at magni provident
 							corporis fuga quam inventore.
 						</p>
-
 					</div>
 				</article>
 			</div>
 		</div>
-		</div>
+		<!-- </div> -->
 
 	</main>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="./assets/js/script.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script src="./assets/js/script.js"></script>
 </body>
 
 </html>
