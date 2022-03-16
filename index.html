@@ -58,11 +58,65 @@
 				</div>
 			</div>
 			<!-- Search Criteria -->
-			<div class="columns is-mobile is-centered">
+			<div class="columns is-mobile is-centered" >
 				<div class="column has-text-center is-2">
-					<button class="button is-large is-primary has-text-center has-text-black">Find Movie</button>
+					<button class="button is-large is-primary has-text-center has-text-black" id="find-movie-btn">Find Movie</button>
 				</div>
 			</div>
+			<!-- Search Modal -->
+			<div class="modal" id="search-modal">
+				<div class="modal-background"></div>
+				<div class="modal-card">
+				  <header class="modal-card-head">
+					<p class="modal-card-title">Find Your Movie!</p>
+				  </header>
+				  <section class="modal-card-body">
+					  <!-- Select Genre -->
+					<div class="dropdown is-active">
+						<div class="dropdown-trigger">
+						  <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+							<span>Genre: </span>
+							<span class="icon is-small">
+							  <i class="fas fa-angle-down" aria-hidden="true"></i>
+							</span>
+						  </button>
+						</div>
+						<div class="dropdown-menu" id="dropdown-menu" role="menu">
+						  <div class="dropdown-content">
+							<a href="#" class="dropdown-item">
+							  Dropdown item
+							</a>
+							<a class="dropdown-item">
+							  Other dropdown item
+							</a>
+							<a href="#" class="dropdown-item is-active">
+							  Active dropdown item
+							</a>
+							<a href="#" class="dropdown-item">
+							  Other dropdown item
+							</a>
+							<hr class="dropdown-divider">
+							<a href="#" class="dropdown-item">
+							  With a divider
+							</a>
+						  </div>
+						</div>
+					  </div>
+					  <!-- Movie Title -->
+					  <div class="">
+						  <div class="">
+							  <input class="input is-info" type="text" id="movie-title" placeholder="Search...">
+						  </div>
+					  </div>
+
+
+				  </section>
+				  <footer class="modal-card-foot">
+					<button class="button is-success">Find Movie </button>
+					<button class="button">No Movie </button>
+				  </footer>
+				</div>
+			  </div>
 			<!-- Results below -->
 			<div class="tile is-parent box is-12">
 				<div class="tile is-child box">
