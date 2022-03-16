@@ -10,4 +10,3 @@ I want the movie to be saved in the recommended section
 Potential API's:
 http://www.omdbapi.com/
 https://developers.themoviedb.org/4/getting-started/authorization
-https://developer.imdb.com/documentation/
