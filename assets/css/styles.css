@@ -1,7 +1,5 @@
-body {
-    background-image: url("../images/theatre-wallpaper.png");
+.search-modal.active {
+    visibility: visible;
+    text-align: center;
 }
 
-.logo {
-    background-image: url("../images/marquee.jpg");
-}

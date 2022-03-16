@@ -20,6 +20,12 @@
 //shre = 808
 //var movie = "808";
 
+$("#find-movie-btn").click(function() {
+  $(".modal").addClass("is-active")
+});
 
+$(".modal.close").click(function() {
+  $(".modal").removeClass("is-active")
+});
 
 //getMovie(movie);
