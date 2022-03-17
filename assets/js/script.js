@@ -1,9 +1,7 @@
 
-<<<<<<< HEAD
 // " + movie + "?api_key=983c87bc5226584d6913b9818f37ade3
 //var getMovie = function(movieId){
    // var link = "https://api.themoviedb.org/3/movie/" + movieId + "?api_key=983c87bc5226584d6913b9818f37ade3"; 
-=======
 //omdb key
 // http://www.omdbapi.com/?apikey=a6453f4e
 
@@ -141,25 +139,8 @@ var getMovieVideo = function(movieId) {
 //obtains the movie details using the obtained id
 var getMovieDetails = function(movieId){
     var link = "https://api.themoviedb.org/3/movie/" + movieId + "?api_key=983c87bc5226584d6913b9818f37ade3"; 
->>>>>>> 7112fac2180c7ef8201e999f33197018d4bf24a6
 
-    //fetch(link).then(function(response){
-        //if we get a 2XX status code
-<<<<<<< HEAD
-      //  if(response.ok){
-        //    response.json().then(function(data){
-
-          //      console.log(data);
-
-            //})
-       // } else {
-         //   alert("Please Try Again")
-       // }
-   // })
-//}
-//shre = 808
-//var movie = "808";
-
+// open and close find movie modal
 $("#find-movie-btn").click(function() {
   $(".modal").addClass("is-active")
 });
@@ -169,7 +150,6 @@ $(".modal-close").click(function() {
 });
 
 //getMovie(movie);
-=======
         if(response.ok){
             //convert response
             response.json().then(function(movie){
@@ -193,4 +173,3 @@ $(".modal-close").click(function() {
 var movie = "tron";
 getMovieId(movie);
 // getGenre();
->>>>>>> 7112fac2180c7ef8201e999f33197018d4bf24a6
