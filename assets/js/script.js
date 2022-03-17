@@ -1,9 +1,19 @@
 
 //omdb key
-// http://www.omdbapi.com/?i=tt3896198&apikey=a6453f4e
+// http://www.omdbapi.com/?apikey=a6453f4e
 
 // themoviedb key
 // https://api.themoviedb.org/3/search/movie?api_key=983c87bc5226584d6913b9818f37ade3
+
+//display the movie of the icon is clicked in the saved movie area
+var displaySavedMovie = function(){
+
+}
+
+//save the movie of the save button is clicked
+var saveMovie = function(){
+
+}
 
 //get a detailed description of the movie
 var getMovieDescription = function(movieName) {
@@ -38,6 +48,26 @@ var getMovieDescription = function(movieName) {
     })
 }
 
+//{id: 28, name: 'Action'}
+//{id: 12, name: 'Adventure'}
+//{id: 16, name: 'Animation'}
+//{id: 35, name: 'Comedy'}
+//{id: 80, name: 'Crime'}
+//{id: 99, name: 'Documentary'}
+//{id: 18, name: 'Drama'}
+//{id: 10751, name: 'Family'}
+//{id: 14, name: 'Fantasy'}
+//{id: 36, name: 'History'}
+//{id: 27, name: 'Horror'}
+//{id: 10402, name: 'Music'}
+//{id: 9648, name: 'Mystery'}
+//{id: 10749, name: 'Romance'}
+//{id: 878, name: 'Science Fiction'}
+//{id: 10770, name: 'TV Movie'}
+//{id: 53, name: 'Thriller'}
+//{id: 10752, name: 'War'}
+//{id: 37, name: 'Western'}
+
 //obtains a movie based on the genre selected
 var getGenre = function(genreId){
     link = "https://api.themoviedb.org/3/discover/movie?with_genres=" + genreId + "&api_key=983c87bc5226584d6913b9818f37ade3&sort_by=release_date.desc&sort_by=popularity.desc"
@@ -50,7 +80,7 @@ var getGenre = function(genreId){
                 // console.log(data);
             })
         } else {
-            alert("Please Try Again")
+            alert("could not obtain movie based on genre")
         }
     })
 }
@@ -65,16 +95,22 @@ var getMovieId = function(movieName){
             //convert response
             response.json().then(function(data){
 
-                // console.log(data);
+                console.log(data);
 
-                //obtain the details of the movie
-                getMovieDetails(data.results[0].id);
-                //obtain the video of the movie
-                getMovieVideo(data.results[0].id);
+                //if the movie that is being searched for exist...
+                if(data.results[0] != undefined){
+                    //obtain the details of the movie
+                    getMovieDetails(data.results[0].id);
+                    //obtain the video of the movie
+                    getMovieVideo(data.results[0].id);
+                } else {
+                    //display a warning that the movie does not exist and to try again
+                    alert("search did not bring up a movie")
+                }
 
             })
         } else {
-            alert("Please Try Again")
+            alert("could not obtain the id of that movie")
         }
     })
 }
@@ -92,7 +128,7 @@ var getMovieVideo = function(movieId) {
                 $("#trailer").attr("src", "https://www.youtube.com/embed/" + data.results[0].key)
             })
         } else {
-            alert("Please Try Again")
+            alert("could not obtain trailer link")
         }
     })
 }
@@ -107,21 +143,22 @@ var getMovieDetails = function(movieId){
             //convert response
             response.json().then(function(movie){
                 // console.log(movie.imdb_id)
-                // console.log(movie);
+                console.log(movie);
                 //display the movie poster to the html
                 $("#movie-poster").attr("src", "http://image.tmdb.org/t/p/w500/" + movie.poster_path);
                 //test display the card
                 $(".test-save").attr("src", "http://image.tmdb.org/t/p/w500/" + movie.poster_path);
+                //add the description using the movie title
+                getMovieDescription(movie.original_title);
 
             })
         } else {
-            alert("Please Try Again")
+            alert("could not obtain movie details using the id")
         }
     })
 }
 
-var movie = "shrek";
-
+//temporary for testing
+var movie = "tron";
 getMovieId(movie);
-getMovieDescription(movie);
-getGenre();
+// getGenre();
