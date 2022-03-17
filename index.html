@@ -10,30 +10,49 @@
 </head>
 
 <body>
+
+	<section class="tile is-parent box background">
+		<div class="hero is-fullheight is-12 marquee">
+			<!-- BEGIN HERO -->
+			<div class="hero-head">
+				<div class="tile is-parent">
+					<h1 class="search">Search,</h1>
+				</div>
+				<div class="tile is-parent ">
+					<h1 class="watch ">Watch,</h1>
+				</div>
+				<div class="tile is-parent ">
+					<h1 class="chill ">Chill</h1>
+				</div>
+			</div>
+			<div class="hero-body has-text-centered ">
+				<p class="intro">
+					As a viewer of movies,
+					I want to be able to search for movies based on selected criteria
+					When a movie is found,
+					I want to see a movie poster, trailer, and summary of said movie.
+				</p>
+			</div>
+		</div>
+	</section>
+
 	<main class="tile is-ancestor">
-
 		<div class="tile is-vertical box background">
-			<section class="tile is-parent box marquee">
+			<!-- <section class="tile is-parent box marquee">
 				<div class="hero is-fullheight is-12">
-					<!-- BEGIN HERO -->
-
+					
 					<div class="hero-head">
-
 						<div class="tile is-parent">
-							<h1 class="search">Search</h2>
+							<h1 class="search">Search,</h1>
 						</div>
 						<div class="tile is-parent ">
-							<h1 class="watch ">Watch</h2>
+							<h1 class="watch ">Watch,</h1>
 						</div>
-
 						<div class="tile is-parent ">
-							<h1 class="chill ">Chill</h2>
+							<h1 class="chill ">Chill</h1>
 						</div>
-
 					</div>
-
-					<div class="hero-body  has-text-centered">
-
+					<div class="hero-body has-text-centered ">
 						<p class="intro">
 							As a viewer of movies,
 							I want to be able to search for movies based on selected criteria
@@ -41,16 +60,27 @@
 							I want to see a movie poster, trailer, and summary of said movie.
 						</p>
 					</div>
-
-
-					<!--END HERO  -->
 				</div>
-			</section>
+			</section> -->
+
+			<div class="tile is-parent box">
+				<div child="tile is-child box">
+					<div class="columns box">
+
+
+						try putting search button here
+
+
+					</div>
+				</div>
+			</div>
+
+
 			<!-- Saved searches/search history -->
 			<div class="tile is-parent">
 				<h2 class="title is-3 has-text-white">Saved Searches</h2>
 			</div>
-			<div class="tile is-parent">
+			<div class="tile is-parent thumbnails">
 				<div class="columns">
 					<div class="column">
 						<figure class="image is-128x128">
@@ -61,7 +91,6 @@
 						<figure class="image is-128x128">
 							<img class="test-save" src="">
 						</figure>
-
 					</div>
 					<div class="column ">
 						<figure class="image is-128x128">
@@ -125,9 +154,11 @@
 		</div>
 
 	</main>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js" integrity="sha256-eTyxS0rkjpLEo16uXTS0uVCS4815lc40K2iVpWDvdSY=" crossorigin="anonymous"></script>
-    <script src="./assets/js/script.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"
+		integrity="sha256-eTyxS0rkjpLEo16uXTS0uVCS4815lc40K2iVpWDvdSY=" crossorigin="anonymous"></script>
+	<script src="./assets/js/script.js"></script>
 </body>
 
 </html>
