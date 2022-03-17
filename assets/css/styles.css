@@ -3,9 +3,10 @@ body {
 }
 
 h1 {
-  font-size: 120px;
+  font-size: 130px;
   color: black;
   font-weight: boldest;
+  font-family: 'Vast Shadow', cursive;
   
 }
 
@@ -53,7 +54,7 @@ padding-bottom: 60px;
 
 .chill {
   margin-left: 800px;
-  font-size: 120px;
+  font-size: 140px;
   color: rgb(167, 167, 167);
   font-style: italic;
   
