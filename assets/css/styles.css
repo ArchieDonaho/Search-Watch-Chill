@@ -1,9 +1,8 @@
 
-
-
-.modal-card {
+  .modal-card {
     overflow: hidden;
-}
+  }
+
 .background  {
   background-image: url("../images/theatre-wallpaper.png");
 }
