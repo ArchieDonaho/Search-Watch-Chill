@@ -15,39 +15,6 @@ var saveMovie = function(){
 
 }
 
-//get a detailed description of the movie
-var getMovieDescription = function(movieName) {
-    link = "http://www.omdbapi.com/?apikey=a6453f4e&t=" + movieName + "&plot=short";
-
-    fetch(link).then(function(response){
-        //if we get a 2XX status code
-        if(response.ok){
-            //convert response
-            response.json().then(function(data){
-                console.log(data);
-                console.log(data.plot);
-
-                //add the description
-                $("#description").text(data.Plot);
-                //add the release date
-                $("#released").text("Released: " + data.Released);
-                //display all scores
-                for(var i=0; i<data.Ratings.length; i++){
-                    var score = $("<li>");
-                    score.text(data.Ratings[i].Source + ": " + data.Ratings[i].Value);
-                    $("#ratings").append(score)
-                }
-                //display box office profits
-                $("#profits").text("Box Office Profit: " + data.BoxOffice);
-                //display awards
-                $("#awards").text("Awards: " + data.Awards);
-            })
-        } else {
-            alert("could not retrieve description")
-        }
-    })
-}
-
 //{id: 28, name: 'Action'}
 //{id: 12, name: 'Adventure'}
 //{id: 16, name: 'Animation'}
@@ -77,10 +44,52 @@ var getGenre = function(genreId){
         if(response.ok){
             //convert response
             response.json().then(function(data){
-                // console.log(data);
+                console.log(data);
+
+                //obtain a random movie from the list
+                var movieId = Math.floor(Math.random() * data.results.length)
+                getMovieId(movieId)
             })
         } else {
             alert("could not obtain movie based on genre")
+        }
+    })
+}
+
+//get a detailed description of the movie
+var getMovieDescription = function(movieName) {
+    link = "http://www.omdbapi.com/?apikey=a6453f4e&t=" + movieName + "&plot=short";
+
+    fetch(link).then(function(response){
+        //if we get a 2XX status code
+        if(response.ok){
+            //convert response
+            response.json().then(function(data){
+                console.log(data);
+
+                //if omdb does not recognize the movie
+                if(data.Error){
+                    $("#description").text("Information not found (usually due to being hosed by a 3rd party service, ie. Netfilx, Hulu, Amazon");
+                } else {
+                    //add the description
+                    $("#description").text(data.Plot);
+                    //add the release date
+                    $("#released").text("Released: " + data.Released);
+                    //display all scores
+                    $("#ratings").text("Ratings: ");
+                    for(var i=0; i<data.Ratings.length; i++){
+                        var score = $("<li>");
+                        score.text(data.Ratings[i].Source + ": " + data.Ratings[i].Value);
+                        $("#ratings").append(score)
+                    }
+                    //display box office profits
+                    $("#profits").text("Box Office Profit: " + data.BoxOffice);
+                    //display awards
+                    $("#awards").text("Awards: " + data.Awards);
+                }
+            })
+        } else {
+            alert("could not retrieve description")
         }
     })
 }
@@ -124,8 +133,13 @@ var getMovieVideo = function(movieId) {
         if(response.ok){
             //convert response
             response.json().then(function(data){
-                //embed the trailer youtube video to the webpage
-                $("#trailer").attr("src", "https://www.youtube.com/embed/" + data.results[0].key)
+                console.log(data);
+
+                //if there is a trailer for the movie available
+                if(data.results[0]){
+                    //embed the trailer youtube video to the webpage
+                    $("#trailer").attr("src", "https://www.youtube.com/embed/" + data.results[0].key)
+                } 
             })
         } else {
             alert("could not obtain trailer link")
@@ -160,5 +174,5 @@ var getMovieDetails = function(movieId){
 
 //temporary for testing
 var movie = "tron";
-getMovieId(movie);
-// getGenre();
+// getMovieId(movie);
+// getGenre(37);
