@@ -1,3 +1,23 @@
+<<<<<<< HEAD
 .modal-card {
     overflow: hidden;
 }
+=======
+.background  {
+  background-image: url("../images/theatre-wallpaper.png");
+}
+
+.marquee {
+  background-image: url("../images/marquee.png");
+}
+
+.intro  {
+  padding-left: 40px;
+}
+
+/* main {
+  width: auto;
+  height: auto;
+} */
+
+>>>>>>> 7112fac2180c7ef8201e999f33197018d4bf24a6
