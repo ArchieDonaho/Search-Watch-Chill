@@ -1,13 +1,28 @@
+
+
+
+.modal-card {
+    overflow: hidden;
+}
 .background  {
   background-image: url("../images/theatre-wallpaper.png");
 }
 
 .marquee {
   background-image: url("../images/marquee.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  background-position: 80%;
+
 }
 
-.intro  {
-  padding-left: 40px;
+.saved-search {
+  margin-top: 20px;
+  margin-bottom: 60px;
 }
 
 /* main {
