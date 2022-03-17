@@ -1,3 +1,8 @@
+h1 {
+  font-size: 70px;
+  color: black;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+}
 
   .modal-card {
     overflow: hidden;
@@ -16,7 +21,18 @@
   flex-wrap: wrap;
   align-items: flex-start;
   background-position: 80%;
+}
 
+.search {
+  margin-left: 20px;
+}
+
+.watch {
+  margin-left: 100px;
+}
+
+.chill {
+  margin-left: 180px;;
 }
 
 .saved-search {
