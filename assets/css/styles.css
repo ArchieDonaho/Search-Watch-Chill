@@ -1,5 +1,3 @@
-.search-modal.active {
-    visibility: visible;
-    text-align: center;
+.modal-card {
+    overflow: hidden;
 }
-
