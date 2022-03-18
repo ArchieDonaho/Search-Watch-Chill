@@ -1,17 +1,25 @@
 
 //omdb key
-// http://www.omdbapi.com/?apikey=a6453f4e
+// http://www.omdbapi.com/?i=tt3896198&apikey=a6453f4e
 
 // themoviedb key
 // https://api.themoviedb.org/3/search/movie?api_key=983c87bc5226584d6913b9818f37ade3
 
-//display the movie of the icon is clicked in the saved movie area
+
+
+//display the movie if the icon is clicked in the saved movie area
 var displaySavedMovie = function(){
 
 }
 
 //save the movie of the save button is clicked
-var saveMovie = function(){
+var saveMovie = function(imdbID){
+    console.log("accessed saveMovie");
+    console.log(imdbID);
+
+    //display the image in the saved section
+    posterPath = $("#movie-poster").attr("src");
+    $(".test-save").attr("src", posterPath);
 
 }
 
@@ -35,6 +43,16 @@ var saveMovie = function(){
 //{id: 10752, name: 'War'}
 //{id: 37, name: 'Western'}
 
+//generate a save button
+var displaySaveButton = function(){
+    // console.log("accessed displaySaveButton");
+    //create and display the container for the button
+    var buttonEl = $("<button>");
+    buttonEl.addClass("btn").text("Save Movie").attr("id", "save-btn");
+    var containerEl = $("#description").parent().parent();
+    containerEl.after(buttonEl);
+}
+
 //obtains a movie based on the genre selected
 var getGenre = function(genreId){
     link = "https://api.themoviedb.org/3/discover/movie?with_genres=" + genreId + "&api_key=983c87bc5226584d6913b9818f37ade3&sort_by=release_date.desc&sort_by=popularity.desc"
@@ -44,14 +62,14 @@ var getGenre = function(genreId){
         if(response.ok){
             //convert response
             response.json().then(function(data){
-                console.log(data);
+                // console.log(data);
 
                 //obtain a random movie from the list
                 var movieId = Math.floor(Math.random() * data.results.length)
                 getMovieId(movieId)
             })
         } else {
-            alert("could not obtain movie based on genre")
+            alert("Please Try Again")
         }
     })
 }
@@ -87,6 +105,9 @@ var getMovieDescription = function(movieName) {
                     //display awards
                     $("#awards").text("Awards: " + data.Awards);
                 }
+
+                //generate the save button
+                displaySaveButton();
             })
         } else {
             alert("could not retrieve description")
@@ -103,23 +124,18 @@ var getMovieId = function(movieName){
         if(response.ok){
             //convert response
             response.json().then(function(data){
+                console.log(data.results[0]);
 
-                console.log(data);
-
-                //if the movie that is being searched for exist...
-                if(data.results[0] != undefined){
-                    //obtain the details of the movie
-                    getMovieDetails(data.results[0].id);
-                    //obtain the video of the movie
-                    getMovieVideo(data.results[0].id);
-                } else {
-                    //display a warning that the movie does not exist and to try again
-                    alert("search did not bring up a movie")
-                }
-
+                getMoviePoster(data.results[0].id);
+                //obtain the trailer of the movie
+                getMovieVideo(data.results[0].id);
+                //obtain the details of the movie
+                getMovieDescription(data.results[0].original_title);
+                //display the title
+                $("#movie-title").text(data.results[0].original_title + " , IMDB: " + data.results[0].id)
             })
         } else {
-            alert("could not obtain the id of that movie")
+            alert("Please Try Again")
         }
     })
 }
@@ -133,7 +149,7 @@ var getMovieVideo = function(movieId) {
         if(response.ok){
             //convert response
             response.json().then(function(data){
-                console.log(data);
+                // console.log(data);
 
                 //if there is a trailer for the movie available
                 if(data.results[0]){
@@ -142,46 +158,57 @@ var getMovieVideo = function(movieId) {
                 } 
             })
         } else {
-            alert("could not obtain trailer link")
+            alert("Please Try Again")
         }
     })
 }
 
+var displayMoviePoster = function(moviePosterURL){
+    console.log(moviePosterURL);
+    //display the movie poster to the html
+    $("#movie-poster").attr("src", "http://image.tmdb.org/t/p/w500/" + moviePosterURL);
+}
+
 //obtains the movie details using the obtained id
-var getMovieDetails = function(movieId){
+var getMoviePoster = function(movieId){
+    console.log("movie id: " + movieId);
     var link = "https://api.themoviedb.org/3/movie/" + movieId + "?api_key=983c87bc5226584d6913b9818f37ade3"; 
 
     fetch(link).then(function(response){
         //if we get a 2XX status code
         if(response.ok){
             //convert response
-            response.json().then(function(movie){
-                // console.log(movie.imdb_id)
-                console.log(movie);
+            response.json()
+            .then(function(movie){
+                console.log(movie.imdb_id)
+                console.log(movie.poster_path);
+
+                
+
                 //display the movie poster to the html
                 $("#movie-poster").attr("src", "http://image.tmdb.org/t/p/w500/" + movie.poster_path);
                 //test display the card
-                $(".test-save").attr("src", "http://image.tmdb.org/t/p/w500/" + movie.poster_path);
-                //add the description using the movie title
-                getMovieDescription(movie.original_title);
+                // $(".test-save").attr("src", "http://image.tmdb.org/t/p/w500/" + movie.poster_path);
 
             })
         } else {
-            alert("could not obtain movie details using the id")
+            alert("Please Try Again")
         }
     })
+
+
+ 
+    
 }
 
-// search modal functionality
-$("#find-movie-btn").click(function() {
-    $(".modal").addClass("is-active")
-  });
-  
-  $(".modal-close").click(function() {
-    $(".modal").removeClass("is-active")
-  });
+//when the save button is clicked, save the movie
+$("#movie-title").parent().parent().parent().on("click", "#save-btn", function(){
+    //grab the IMDB number to save the movie
+    saveMovie( $("#movie-title").text().split("IMDB: ")[1]  );
+    //figure out whwy the image is not displaying
+});
 
 //temporary for testing
 var movie = "tron";
 // getMovieId(movie);
-// getGenre(37);
+getGenre(37);
