@@ -172,6 +172,15 @@ var getMovieDetails = function(movieId){
     })
 }
 
+// search modal functionality
+$("#find-movie-btn").click(function() {
+    $(".modal").addClass("is-active")
+  });
+  
+  $(".modal-close").click(function() {
+    $(".modal").removeClass("is-active")
+  });
+
 //temporary for testing
 var movie = "tron";
 // getMovieId(movie);
