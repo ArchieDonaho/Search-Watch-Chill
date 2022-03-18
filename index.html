@@ -6,34 +6,63 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Search, Watch, Chill</title>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto&family=Staatliches&display=swap" rel="stylesheet">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto&family=Staatliches&family=Vast+Shadow&display=swap" rel="stylesheet">
+
 	<link rel="stylesheet" href="./assets/css/styles.css">
 </head>
 
 <body>
+
+	<section class="tile is-parent background">
+		<div class="hero is-fullheight  marquee">
+			<!-- BEGIN HERO -->
+			<div class="hero-head is-vertical" >
+				<div class="tile is-parent is-vertical is-12">
+					<h1 class="search">Search,</h1>
+				</div>
+				<div class="tile is-parent is-12">
+					<h1 class="watch">Watch,</h1>
+				</div>
+				<div class="tile is-parent ">
+					<h1 class="chill">Chill</h1>
+				</div>
+			</div>
+			<div class="hero-body has-text-centered">
+				<p class="intro">
+					Do you love movies?
+					<br>
+					Search for your new favorite movie based on genre, rating, franchise and much more!
+					<br>
+					Click "Search" to begin!  
+				</p>
+			</div>
+		</div>
+	</section>
+
 	<main class="tile is-ancestor">
-
 		<div class="tile is-vertical box background">
-			<section class="tile is-parent box marquee">
+			<!-- <section class="tile is-parent box marquee">
 				<div class="hero is-fullheight is-12">
-					<!-- BEGIN HERO -->
-
-					<div class="hero-body">
-
-						<div class="tile is-parent is-6">
-							<h2 class="title is-1 has-text-white">Search</h2>
+					
+					<div class="hero-head">
+						<div class="tile is-parent">
+							<h1 class="search">Search,</h1>
 						</div>
-						<div class="tile is-parent is-6">
-							<h2 class="title is-1 has-text-white">Watch</h2>
+						<div class="tile is-parent ">
+							<h1 class="watch ">Watch,</h1>
 						</div>
-
-						<div class="tile is-parent is-6">
-							<h2 class="title is-1 has-text-white">Chill</h2>
+						<div class="tile is-parent ">
+							<h1 class="chill ">Chill</h1>
 						</div>
-
 					</div>
-
-					<div class="hero-foot subtitle is-2 has-text-centered">
-
+					<div class="hero-body has-text-centered ">
 						<p class="intro">
 							As a viewer of movies,
 							I want to be able to search for movies based on selected criteria
@@ -41,16 +70,181 @@
 							I want to see a movie poster, trailer, and summary of said movie.
 						</p>
 					</div>
-
-
-					<!--END HERO  -->
 				</div>
-			</section>
+			</section> -->
+
+			<div class="tile is-parent box">
+				<div child="tile is-child box">
+					<div class="columns box">
+						<!-- Search Criteria -->
+						<div class="columns is-mobile is-centered">
+							<div class="column has-text-center is-2">
+								<button class="button is-large is-primary has-text-center has-text-black" id="find-movie-btn">Find
+									Movie</button>
+							</div>
+						</div>
+						<!-- Search Modal -->
+						<div class="modal" id="search-modal">
+							<div class="modal-background"></div>
+							<div class="modal-card">
+								<header class="modal-card-head has-background-danger-dark">
+									<p class="modal-card-title has-text-black has-text-weight-bold is-uppercase is-italic has-text-centered">
+										Find Your Movie!</p>
+								</header>
+								<section class="modal-card-body is-clipped">
+									<!-- Select Genre -->
+									<div class="dropdown">
+										<div class="dropdown-trigger">
+											<button class="button is-rounded" style="width: 180%" aria-controls="dropdown-menu"
+												aria-haspopup="true">
+												<span>Genre</span>
+												<span class="icon is-small">
+													<i class="fas fa-angle-down" aria-hidden="true"></i>
+												</span>
+											</button>
+										</div>
+										<div class="dropdown-menu" id="dropdown-menu" role="menu">
+											<div class="dropdown-content">
+												<div class="dropdown-item">
+													<a id="28">
+														<h5>Action</h5>
+													</a>
+												</div>
+												<hr class="dropdown-divider">
+												<div class="dropdown-item">
+													<a id="12">
+														<h5>Adventure</h5>
+													</a>
+												</div>
+												<hr class="dropdown-divider">
+												<div class="dropdown-item">
+													<a id="16">
+														<h5>Animation</h5>
+													</a>
+												</div>
+												<hr class="dropdown-divider">
+												<div class="dropdown-item">
+													<a id="35">
+														<h5>Comedy</h5>
+													</a>
+												</div>
+												<hr class="dropdown-divider">
+												<div class="dropdown-item">
+													<a id="80">
+														<h5>Crime</h5>
+													</a>
+												</div>
+												<hr class="dropdown-divider">
+												<div class="dropdown-item">
+													<a id="99">
+														<h5>Documentary</h5>
+													</a>
+												</div>
+												<hr class="dropdown-divider">
+												<div class="dropdown-item">
+													<a id="18">
+														<h5>Drama</h5>
+													</a>
+												</div>
+												<hr class="dropdown-divider">
+												<div class="dropdown-item">
+													<a id="10751">
+														<h5>Family</h5>
+													</a>
+												</div>
+												<hr class="dropdown-divider">
+												<div class="dropdown-item">
+													<a id="14">
+														<h5>Fantasy</h5>
+													</a>
+												</div>
+												<hr class="dropdown-divider">
+												<div class="dropdown-item">
+													<a id="36">
+														<h5>History</h5>
+													</a>
+												</div>
+												<hr class="dropdown-divider">
+												<div class="dropdown-item">
+													<a id="27">
+														<h5>Horror</h5>
+													</a>
+												</div>
+												<hr class="dropdown-divider">
+												<div class="dropdown-item">
+													<a id="10402">
+														<h5>Music</h5>
+													</a>
+												</div>
+												<hr class="dropdown-divider">
+												<div class="dropdown-item">
+													<a id="9648">
+														<h5>Mystery</h5>
+													</a>
+												</div>
+												<hr class="dropdown-divider">
+												<div class="dropdown-item">
+													<a id="10749">
+														<h5>Romance</h5>
+													</a>
+												</div>
+												<hr class="dropdown-divider">
+												<div class="dropdown-item">
+													<a id="878">
+														<h5>Science Fiction</h5>
+													</a>
+												</div>
+												<hr class="dropdown-divider">
+												<div class="dropdown-item">
+													<a id="10770">
+														<h5>TV Movie</h5>
+													</a>
+												</div>
+												<hr class="dropdown-divider">
+												<div class="dropdown-item">
+													<a id="53">
+														<h5>Thriller</h5>
+													</a>
+												</div>
+												<hr class="dropdown-divider">
+												<div class="dropdown-item">
+													<a id="10752">
+														<h5>War</h5>
+													</a>
+												</div>
+												<hr class="dropdown-divider">
+												<div class="dropdown-item">
+													<a id="37">
+														<h5>Western</h5>
+													</a>
+												</div>
+												<hr class="dropdown-divider">
+											</div>
+										</div>
+									</div>
+									<input class="input is-rounded is-medium m-r-5 is-pulled-right" style="width: 40%" type="text"
+										placeholder="Search for a Title">
+								</section>
+								<footer class="modal-card-foot">
+									<button class="button is-medium is-fullwidth is-link is-rounded">Search</button>
+									<button class="modal-close">Cancel</button>
+								</footer>
+							</div>
+						</div>
+						
+						
+						
+						
+						</div>
+						</div>
+						</div>
+
+
 			<!-- Saved searches/search history -->
 			<div class="tile is-parent">
 				<h2 class="title is-3 has-text-white">Saved Searches</h2>
 			</div>
-			<section class="tile is-parent saved-search">
+			<div class="tile is-parent thumbnails">
 				<div class="columns">
 					<div class="column">
 						<figure class="image is-128x128">
@@ -61,7 +255,26 @@
 						<figure class="image is-128x128">
 							<img class="test-save" src="">
 						</figure>
+					</div>
+					<div class="column ">
+						<figure class="image is-128x128">
+							<img class="test-save" src="">
+						</figure>
+					</div>
+					<div class="column ">
+						<figure class="image is-128x128">
+							<img class="test-save" src="">
+						</figure>
+					</div>
+					<div class="column ">
+						<figure class="image is-128x128">
+							<img class="test-save" src="">
+						</figure>
+					</div>
+				</div>
+			</div>
 
+<<<<<<< HEAD
 					</div>
 					<div class="column ">
 						<figure class="image is-128x128">
@@ -196,13 +409,15 @@
 				</div>
 			</div>
 			<!-- Results below -->
+=======
+			<!-- <div class="tile box">search</div> -->
+>>>>>>> 8e41a3312d8dcb8802f736ed725b4cb55f9b83fa
 			<div class="tile is-parent box is-12">
-				<div class="tile is-child box">
-					<div class="columns is-8 box">
-						<div class="column box">
-							<h4>poster here</h4>
-
-			<div class="tile box"></div>
+				<div child="tile is-child box">
+					<div class="columns is-centered">
+					</div>
+				</div>
+			</div>
 
 			<!-- poster and video links -->
 			<div class="tile is-parent is-12">
@@ -222,23 +437,34 @@
 			<div class="tile is-vertical is-parent">
 				<article class="tile is-child box is-12">
 					<div class="tile">
-						<h3>Movie description</h3>
+						<h3>description/synopsis</h3>
 					</div>
 					<div class="tile">
-						<p id="description"></p>
-                        <p id="released"></p>
-                        <ul id="ratings"></ul>
-                        <p id="profits"></p>
-                        <p id="awards"></p>
+
+						<p>
+							Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi vero cupiditate dolorum unde excepturi
+							dignissimos rerum repellat veritatis praesentium. Soluta odit nesciunt ex quisquam debitis est, porro
+							ipsam alias distinctio. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit beatae enim porro
+							quae, provident quia? Repellat recusandae obcaecati enim veniam a quod, pariatur odio unde ipsa, autem
+							laudantium earum id.
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis adipisci laborum modi ducimus
+							maxime, amet dolorem doloribus consequuntur totam optio minima nemo necessitatibus at magni provident
+							corporis fuga quam inventore.
+						</p>
+
+
+						
 					</div>
 				</article>
 			</div>
 		</div>
 
 	</main>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js" integrity="sha256-eTyxS0rkjpLEo16uXTS0uVCS4815lc40K2iVpWDvdSY=" crossorigin="anonymous"></script>
-    <script src="./assets/js/script.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"
+		integrity="sha256-eTyxS0rkjpLEo16uXTS0uVCS4815lc40K2iVpWDvdSY=" crossorigin="anonymous"></script>
+	<script src="./assets/js/script.js"></script>
 </body>
 
 </html>
