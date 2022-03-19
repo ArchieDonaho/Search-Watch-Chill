@@ -8,7 +8,7 @@
 //generate the array to save the movies
 var savedMovies = [];
 
-//display the movie if the icon is clicked in the saved movie area
+//display the saved movies
 var displaySavedMovie = function(){
     savedMovies =  JSON.parse(localStorage.getItem("movies"));
 
@@ -23,9 +23,6 @@ var displaySavedMovie = function(){
 
     // for each index in the movies array, display the image in the saved section
     $.each(savedMovies, function(index, item) {
-        //obtain the poster path via the imdb id
-        // posterPath = a;
-
         var column = $("<div>");
         column.addClass("column")
               .appendTo($("#saved-movies"));
@@ -35,14 +32,9 @@ var displaySavedMovie = function(){
               .appendTo(column);
 
         var image = $("<img>");
-        image.attr("src", "http://image.tmdb.org/t/p/w500/" + item[1])
+        image.attr("src", item[1])
+             .addClass("")
              .appendTo(figure);
-
-        // <div class="column ">
-		// 	<figure class="image is-128x128">
-		// 		<img src="">
-		// 	</figure>
-		// </div>
     })
 
 }
@@ -108,14 +100,18 @@ var saveMovie = function(imdbID, posterURL){
 //{id: 10752, name: 'War'}
 //{id: 37, name: 'Western'}
 
-//generate a save button
-var displaySaveButton = function(){
-    // console.log("accessed displaySaveButton");
     //create and display the container for the button
-    var buttonEl = $("<button>");
-    buttonEl.addClass("btn").text("Save Movie").attr("id", "save-btn");
+var displaySaveButton = function(){
     var containerEl = $("#description").parent().parent();
-    containerEl.after(buttonEl);
+    //if the button doesn't exist, create and display one
+    if($("#save-btn").length == 0){
+        var buttonEl = $("<button>");
+        buttonEl.addClass("btn")
+                .text("Save Movie")
+                .attr("id", "save-btn");
+
+        containerEl.after(buttonEl);
+    }
 }
 
 //obtains a movie based on the genre selected
@@ -189,15 +185,16 @@ var getMovieId = function(movieName){
         if(response.ok){
             //convert response
             response.json().then(function(data){
-                console.log(data.results[0]);
-
+                // console.log(data.results[0]);
+                
+                //display the title
+                $("#movie-title").text(data.results[0].original_title + " , IMDB: " + data.results[0].id)
+                //display the movie poster
                 getMoviePoster(data.results[0].id);
                 //obtain the trailer of the movie
                 getMovieVideo(data.results[0].id);
                 //obtain the details of the movie
                 getMovieDescription(data.results[0].original_title);
-                //display the title
-                $("#movie-title").text(data.results[0].original_title + " , IMDB: " + data.results[0].id)
             })
         } else {
             alert("Please Try Again")
@@ -228,11 +225,11 @@ var getMovieVideo = function(movieId) {
     })
 }
 
-var displayMoviePoster = function(moviePosterURL){
-    console.log(moviePosterURL);
-    //display the movie poster to the html
-    $("#movie-poster").attr("src", "http://image.tmdb.org/t/p/w500/" + moviePosterURL);
-}
+// var displayMoviePoster = function(moviePosterURL){
+//     console.log(moviePosterURL);
+//     //display the movie poster to the html
+//     $("#movie-poster").attr("src", "http://image.tmdb.org/t/p/w500/" + moviePosterURL);
+// }
 
 //obtains the movie details using the obtained id
 var getMoviePoster = function(movieId){
@@ -268,9 +265,29 @@ var getMoviePoster = function(movieId){
 //when the save button is clicked, save the movie
 $("#movie-title").parent().parent().parent().on("click", "#save-btn", function(){
     //grab the IMDB number to save the movie
-    saveMovie( $("#movie-title").text().split("IMDB: ")[1], $("#movie-poster").attr("src") );
+    saveMovie( $("#movie-title").text().split(" , IMDB")[0], $("#movie-poster").attr("src") );
     //figure out whwy the image is not displaying
 });
+
+
+
+//when a poster from the saved movies is clicked, display that movie
+$("#saved-movies").on("click", "img", function(){
+    //grab the source image url and use that to find the title in the saved movies array
+    var url = $(this).attr("src");
+    console.log(url);
+
+    //obtain the title from the index containing the same source url
+    var title;
+    for(var i=0; i<savedMovies.length; i++){
+        if(savedMovies[i][1] == url){
+            title = savedMovies[i][0];
+        }
+    }
+    //then display that movie to the user
+    getMovieId(title);
+
+})
 
 //display previously saved movies
 displaySavedMovie()
