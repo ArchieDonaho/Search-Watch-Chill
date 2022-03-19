@@ -69,6 +69,15 @@ padding-bottom: 60px;
   margin: 0 0 40px;
 }
 
+
+/* NEW */
+.icon {
+  height: 20em;
+  width: 20em;
+}
+
+
+
 @media screen and (max-width: 980px) {
   .search {
     margin-left: 100px;
