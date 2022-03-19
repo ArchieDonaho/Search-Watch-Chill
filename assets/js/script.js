@@ -5,21 +5,86 @@
 // themoviedb key
 // https://api.themoviedb.org/3/search/movie?api_key=983c87bc5226584d6913b9818f37ade3
 
-
+//generate the array to save the movies
+var savedMovies = [];
 
 //display the movie if the icon is clicked in the saved movie area
 var displaySavedMovie = function(){
+    savedMovies =  JSON.parse(localStorage.getItem("movies"));
+
+    //if there is no movie list saved, generate a new array
+    if(!savedMovies){
+        savedMovies = [];
+    }
+
+    //remove the current list
+    $("#saved-movies")
+        .text("");
+
+    // for each index in the movies array, display the image in the saved section
+    $.each(savedMovies, function(index, item) {
+        //obtain the poster path via the imdb id
+        // posterPath = a;
+
+        var column = $("<div>");
+        column.addClass("column")
+              .appendTo($("#saved-movies"));
+
+        var figure = $("<figure>");
+        figure.addClass("image is-128x128")
+              .appendTo(column);
+
+        var image = $("<img>");
+        image.attr("src", "http://image.tmdb.org/t/p/w500/" + item[1])
+             .appendTo(figure);
+
+        // <div class="column ">
+		// 	<figure class="image is-128x128">
+		// 		<img src="">
+		// 	</figure>
+		// </div>
+    })
 
 }
 
 //save the movie of the save button is clicked
-var saveMovie = function(imdbID){
+var saveMovie = function(imdbID, posterURL){
     console.log("accessed saveMovie");
-    console.log(imdbID);
 
-    //display the image in the saved section
-    posterPath = $("#movie-poster").attr("src");
-    $(".test-save").attr("src", posterPath);
+    //check to see if the movie is already on the list of saved movies, and save that to a variable
+    var isSaved = false;
+    var index;
+    for(var i=0; i<savedMovies.length; i++){
+        if(savedMovies[i].includes(imdbID)){
+            isSaved = true;
+            //if the position is saved already, obtain that index for later use
+            index = i;
+        }
+    }
+    console.log(isSaved);
+
+    //if the movie is not on the list, add it to the front
+    if(!isSaved){
+        savedMovies.unshift([imdbID, posterURL]);
+    } else {
+        //else, remove it from it's current position and add it to the front
+        savedMovies.splice(index, 1);
+        savedMovies.unshift([imdbID, posterURL]);
+    }
+
+    console.log(savedMovies);
+    
+    //if the movie list is too long, then delete the 10th item
+    if(savedMovies.length > 10){
+        savedMovies.pop();
+    }
+
+    //save the movie list as a JSON string
+    localStorage.setItem("movies", JSON.stringify(savedMovies));
+    console.log("movies saved");
+
+    // //then load it and display onto the webpage
+    displaySavedMovie();
 
 }
 
@@ -183,7 +248,6 @@ var getMoviePoster = function(movieId){
                 console.log(movie.imdb_id)
                 console.log(movie.poster_path);
 
-                
 
                 //display the movie poster to the html
                 $("#movie-poster").attr("src", "http://image.tmdb.org/t/p/w500/" + movie.poster_path);
@@ -204,9 +268,12 @@ var getMoviePoster = function(movieId){
 //when the save button is clicked, save the movie
 $("#movie-title").parent().parent().parent().on("click", "#save-btn", function(){
     //grab the IMDB number to save the movie
-    saveMovie( $("#movie-title").text().split("IMDB: ")[1]  );
+    saveMovie( $("#movie-title").text().split("IMDB: ")[1], $("#movie-poster").attr("src") );
     //figure out whwy the image is not displaying
 });
+
+//display previously saved movies
+displaySavedMovie()
 
 //temporary for testing
 var movie = "tron";
