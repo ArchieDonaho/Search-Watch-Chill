@@ -295,4 +295,4 @@ displaySavedMovie()
 //temporary for testing
 var movie = "tron";
 // getMovieId(movie);
-getGenre(37);
+// getGenre(37);
