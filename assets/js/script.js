@@ -265,6 +265,15 @@ var getMoviePoster = function(movieId){
     
 }
 
+// open and close find movie modal
+$("#find-movie-btn").click(function() {
+    $(".modal").addClass("is-active")
+  });
+  
+  $(".modal-close").click(function() {
+    $(".modal").removeClass("is-active")
+  });
+
 //when the save button is clicked, save the movie
 $("#movie-title").parent().parent().parent().on("click", "#save-btn", function(){
     //grab the IMDB number to save the movie
