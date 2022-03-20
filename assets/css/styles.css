@@ -69,13 +69,20 @@ padding-bottom: 60px;
   margin: 0 0 40px;
 }
 
-
-/* NEW */
 .icon {
   height: 20em;
   width: 20em;
 }
+ /* NEW */
+.ticket {
+  background-image: "../images/golden-ticket.png";
+}
 
+
+/* .dropdown-menu {
+  position: fixed !important;
+  z-index: 20;
+} */
 
 
 @media screen and (max-width: 980px) {
