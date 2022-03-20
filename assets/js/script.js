@@ -274,6 +274,19 @@ $("#find-movie-btn").click(function() {
     $(".modal").removeClass("is-active")
   });
 
+  $("#search-genre").click(function(){
+    $(".modal").removeClass("is-active")
+});
+
+$("#search-title").click(function(){
+    $(".modal").removeClass("is-active")
+});
+
+// dropdown for genre
+$(".dropdown").click(function(){
+    $(".dropdown").addClass("is-active")
+});
+
 //when the save button is clicked, save the movie
 $("#movie-title").parent().parent().parent().on("click", "#save-btn", function(){
     //grab the IMDB number to save the movie
