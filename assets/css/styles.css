@@ -3,7 +3,7 @@ body {
 }
 
 h1 {
-  font-size: 130px;
+  font-size: 150px;
   color: black;
   font-weight: boldest;
   font-family: 'Vast Shadow', cursive;
@@ -17,6 +17,10 @@ p {
 } 
 
 .background  {
+  background-image: url("../images/theatre-wallpaper.png");
+}
+
+.btn-background {
   background-image: url("../images/theatre-wallpaper.png");
 }
 
@@ -42,22 +46,23 @@ margin: auto;
 padding-bottom: 60px;
 }
 
+.intro {
+  margin-bottom: 60px;
+}
+
 .search {
   margin-left: 200px;
 }
 
 .watch {
   margin-left: 500px;
-  
-
 }
 
 .chill {
   margin-left: 800px;
-  font-size: 140px;
+  font-size: 180px;
   color: rgb(167, 167, 167);
   font-style: italic;
-  
 }
 
 .saved-search {
@@ -66,24 +71,44 @@ padding-bottom: 60px;
 }
 
 .thumbnails {
-  margin: 0 0 40px;
+  margin: 0 0 80px;
+}
+
+.spacer {
+  background-image: url("../images/theatre-wallpaper.png");
 }
 
 .icon {
   height: 20em;
   width: 20em;
 }
- /* NEW */
-.ticket {
-  background-image: "../images/golden-ticket.png";
+
+.modal-card-head {
+  background-image: url("../images/popcorn.png");
 }
 
+.modal-card-title {
+  font-family: 'Vast Shadow', cursive;
+  font-size: 30px;
+}
 
-/* .dropdown-menu {
-  position: fixed !important;
-  z-index: 20;
-} */
+.modal-card-body {
+  background-image: url("../images/golden-ticket-jpg");
+}
 
+.modal-card-foot {
+  background-image: url("../images/curtains.png");
+}
+
+.ticket {
+  background-image: url("../images/golden-ticket.jpg");
+}
+
+.btn {
+  font-family: 'Vast Shadow', cursive;
+  font-size: 40px;  
+  background-image: url("../images/golden-ticket.jpg");
+}
 
 @media screen and (max-width: 980px) {
   .search {
@@ -121,6 +146,7 @@ padding-bottom: 60px;
     font-style: italic;
   }
 }
+
 
 @media screen and (max-width: 575px) {
   p {
