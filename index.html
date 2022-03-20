@@ -16,7 +16,7 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto&family=Staatliches&display=swap" rel="stylesheet">
-	
+
 	<link rel="stylesheet" href="./assets/css/styles.css">
 </head>
 
@@ -70,7 +70,30 @@
 								</header>
 								<section class="modal-card-body">
 									<!-- Select Genre -->
-									<div class="dropdown">
+									<form action="/action_page.php">
+										<select name="genres" id="genres">
+											<option value="28">Action</option>
+											<option value="12">Adventure</option>
+											<option value="16">Animation</option>
+											<option value="35">Comedy</option>
+											<option value="80">crime</option>
+											<option value="99">Documentary</option>
+											<option value="18">Drama</option>
+											<option value="10751">Family</option>
+											<option value="14">Fantasy</option>
+											<option value="36">History</option>
+											<option value="27">Horror</option>
+											<option value="10402">Music</option>
+											<option value="9648">Mystery</option>
+											<option value="10749">Romance</option>
+											<option value="878">Science Fiction</option>
+											<option value="10770">TV Movie</option>
+											<option value="53">Thriller</option>
+											<option value="10752">War</option>
+											<option value="37">Western</option>
+										</select>
+									</form>
+									<!-- <div class="dropdown">
 										<div class="dropdown-trigger">
 											<button id="dropdown-genre" class="button is-rounded" style="width: 180%" aria-controls="dropdown-menu"
 												aria-haspopup="true">
@@ -198,8 +221,8 @@
 												<hr class="dropdown-divider">
 											</div>
 										</div>
-									</div>
-									<input class="input is-rounded is-medium m-r-5 is-pulled-right" style="width: 40%" type="text"
+									</div> -->
+									<input id="title-textbox" class="input is-rounded is-medium m-r-5 is-pulled-right" style="width: 40%" type="text"
 										placeholder="Search for a Title">
 								</section>
 								<footer class="modal-card-foot">

@@ -223,13 +223,7 @@ var getMovieVideo = function(movieId) {
             alert("Please Try Again")
         }
     })
-}
-
-// var displayMoviePoster = function(moviePosterURL){
-//     console.log(moviePosterURL);
-//     //display the movie poster to the html
-//     $("#movie-poster").attr("src", "http://image.tmdb.org/t/p/w500/" + moviePosterURL);
-// }
+} 
 
 //obtains the movie details using the obtained id
 var getMoviePoster = function(movieId){
@@ -256,26 +250,35 @@ var getMoviePoster = function(movieId){
             alert("Please Try Again")
         }
     })
-
-
- 
-    
 }
+
 
 // open and close find movie modal
 $("#find-movie-btn").click(function() {
     $(".modal").addClass("is-active")
-  });
+});
   
-  $(".modal-close").click(function() {
-    $(".modal").removeClass("is-active")
-  });
-
-  $("#search-genre").click(function(){
+$(".modal-close").click(function() {
     $(".modal").removeClass("is-active")
 });
 
+
+//when the search genre button is clicked
+$("#search-genre").click(function(){
+
+    var genreId = document.querySelector("select[name = 'genres']").value;
+    console.log(genreId);
+
+
+    getGenre(genreId);
+    // // console.log($("#dropdown-genre").text());
+    $(".modal").removeClass("is-active")
+});
+
+//when the search title button is clicked
 $("#search-title").click(function(){
+    getMovieId($("#title-textbox").val());
+    // console.log($("#title-textbox").val());
     $(".modal").removeClass("is-active")
 });
 
@@ -295,18 +298,12 @@ $(".dropdown-item h5").click(function(){
     $("#dropdown-genre").text(text);
 });
 
-
-
-
-
 //when the save button is clicked, save the movie
 $("#movie-title").parent().parent().parent().on("click", "#save-btn", function(){
     //grab the IMDB number to save the movie
     saveMovie( $("#movie-title").text().split(" , IMDB")[0], $("#movie-poster").attr("src") );
     //figure out whwy the image is not displaying
 });
-
-
 
 //when a poster from the saved movies is clicked, display that movie
 $("#saved-movies").on("click", "img", function(){
@@ -328,6 +325,7 @@ $("#saved-movies").on("click", "img", function(){
 
 //display previously saved movies
 displaySavedMovie()
+
 
 //temporary for testing
 var movie = "tron";
