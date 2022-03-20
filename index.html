@@ -6,14 +6,16 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Search, Watch, Chill</title>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-	<!-- NEW -->
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-		integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+<!-- NEW -->
+	<link
+	rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+	integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+	crossorigin="anonymous"
+/>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link
-		href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto&family=Staatliches&display=swap"
-		rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto&family=Staatliches&display=swap" rel="stylesheet">
 
 	<link rel="stylesheet" href="./assets/css/styles.css">
 </head>
@@ -23,7 +25,7 @@
 	<section class="tile is-parent background">
 		<div class="hero is-fullheight  marquee">
 			<!-- BEGIN HERO -->
-			<div class="hero-head is-vertical">
+			<div class="hero-head is-vertical" >
 				<div class="tile is-parent is-vertical is-12">
 					<h1 class="search">Search,</h1>
 				</div>
@@ -40,7 +42,7 @@
 					<br>
 					Search for your new favorite movie based on genre, rating, franchise and much more!
 					<br>
-					Click "Find Movie" to begin!
+					Click "Search" to begin!  
 				</p>
 			</div>
 		</div>
@@ -48,14 +50,13 @@
 
 	<main class="tile is-ancestor">
 		<div class="tile is-vertical box background">
-			<div class="tile is-parent box btn-background">
+			<div class="tile is-parent box">
 				<div child="tile is-child box">
-					<div class="columns">
+					<div class="columns box">
 						<!-- Search Criteria -->
 						<div class="columns is-mobile is-centered">
 							<div class="column has-text-center is-2">
-								<button class="button is-large is-primary has-text-center has-text-black ticket"
-									id="find-movie-btn">Find
+								<button class="button is-large is-primary has-text-center has-text-black" id="find-movie-btn">Find
 									Movie</button>
 							</div>
 						</div>
@@ -69,7 +70,7 @@
 								</header>
 								<section class="modal-card-body">
 									<!-- Select Genre -->
-									form action="/action_page.php">
+									<form action="/action_page.php">
 										<select name="genres" id="genres">
 											<option value="28">Action</option>
 											<option value="12">Adventure</option>
@@ -217,7 +218,7 @@
 														<h5>Western</h5>
 													</a>
 												</div>
-												<!-- <hr class="dropdown-divider"> -->
+												<hr class="dropdown-divider">
 											</div>
 										</div>
 									</div> -->
@@ -231,9 +232,14 @@
 								</footer>
 							</div>
 						</div>
-					</div>
-				</div>
-			</div>
+						
+						
+						
+						
+						</div>
+						</div>
+						</div>
+
 
 			<!-- Saved searches/search history -->
 			<div class="tile is-parent">
@@ -243,7 +249,8 @@
 				<div id="saved-movies" class="columns"></div>
 			</div>
 
-			<div class="tile is-parent box is-12 spacer">
+			<!-- <div class="tile box">search</div> -->
+			<div class="tile is-parent box is-12">
 				<div child="tile is-child box">
 					<div class="columns is-centered">
 					</div>
@@ -272,10 +279,10 @@
 					</div>
 					<div class="tile">
 						<p id="description"></p>
-						<p id="released"></p>
-						<ul id="ratings"></ul>
-						<p id="profits"></p>
-						<p id="awards"></p>
+                        <p id="released"></p>
+                        <ul id="ratings"></ul>
+                        <p id="profits"></p>
+                        <p id="awards"></p>
 					</div>
 				</article>
 			</div>
