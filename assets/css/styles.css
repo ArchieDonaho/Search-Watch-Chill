@@ -3,7 +3,7 @@ body {
 }
 
 h1 {
-  font-size: 150px;
+  font-size: 60px;
   color: black;
   font-weight: boldest;
   font-family: 'Vast Shadow', cursive;
@@ -25,7 +25,7 @@ p {
 }
 
 .marquee {
-  background-image: url("../images/marquee.png");
+  background-image: url("../images/now-showing.jpg");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -33,6 +33,7 @@ p {
   flex-wrap: wrap;
   align-items: flex-start;
   background-position: 80%;
+  image-rendering: optimizeQuality;
 }
 
 .hero-head {
@@ -47,19 +48,21 @@ padding-bottom: 60px;
 }
 
 .intro {
-  margin-bottom: 60px;
+  margin-bottom: 200px;
 }
 
 .search {
-  margin-left: 200px;
+  margin-top: 300px;
+  margin-left: 600px;
 }
 
 .watch {
-  margin-left: 500px;
+  margin-left: 900px;
+  margin-bottom: -50px;
 }
 
 .chill {
-  margin-left: 800px;
+  margin-left: 1200px;
   font-size: 180px;
   color: rgb(167, 167, 167);
   font-style: italic;
