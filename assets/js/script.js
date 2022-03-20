@@ -271,6 +271,34 @@ $("#find-movie-btn").click(function() {
     $(".modal").removeClass("is-active")
   });
 
+  $("#search-genre").click(function(){
+    $(".modal").removeClass("is-active")
+});
+
+$("#search-title").click(function(){
+    $(".modal").removeClass("is-active")
+});
+
+// dropdown for genre
+$(".dropdown").click(function(){
+    $(".dropdown").addClass("is-active")
+});
+
+// change dropdown text to selected genre
+
+function selectedGenre(){
+    $(".dropdown-content").removeClass("is-active");
+}
+
+$(".dropdown-item h5").click(function(){
+    var text = $(this).text();
+    $("#dropdown-genre").text(text);
+});
+
+
+
+
+
 //when the save button is clicked, save the movie
 $("#movie-title").parent().parent().parent().on("click", "#save-btn", function(){
     //grab the IMDB number to save the movie
