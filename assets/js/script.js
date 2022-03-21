@@ -35,6 +35,10 @@ var displaySavedMovie = function(){
         image.attr("src", item[1])
              .addClass("")
              .appendTo(figure);
+
+        var button = $("<button>");
+        button.addClass("delete is-small")
+            .appendTo(figure);
     })
 
 }
@@ -325,6 +329,13 @@ $("#saved-movies").on("click", "img", function(){
 
 //display previously saved movies
 displaySavedMovie()
+
+// var deleteSavedMovie = function() { 
+    $(".delete").click(function(){
+        // $("saved-movies").addClass('hidden')
+        console.log("click")
+    });
+// };
 
 
 //temporary for testing
