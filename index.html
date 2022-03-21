@@ -15,30 +15,50 @@
 		href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto&family=Staatliches&display=swap"
 		rel="stylesheet">
 
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Vast+Shadow&display=swap" rel="stylesheet">	
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Vast+Shadow&display=swap" rel="stylesheet">
 
 	<link rel="stylesheet" href="./assets/css/styles.css">
 </head>
 
 <body>
 
-	<section class="tile is-parent background">
-		<div class="hero is-fullheight  marquee">
-			<!-- BEGIN HERO -->
-			<div class="hero-head is-vertical">
-				<div class="tile is-parent is-vertical is-12">
+
+	<!-- <div class="hero is-fullheight marquee">
+		<div class="hero-head"></div>
+
+		<div class="hero-body">
+
+			<figure class="image is-128x128">
+				<img src="./assets/images/Project-5by4.png">
+			</figure>
+
+		</div>
+		<div class="hero-foot"></div>
+	</div> -->
+
+
+
+	<!-- <div class="tile is-parent ">
+		<div class="hero is-fullheight  marquee"> -->
+	<!-- BEGIN HERO -->
+
+	<!-- <div class="hero-head is-vertical"> -->
+
+	<!-- <div class="tile is-parent is-vertical is-12">
 					<h1 class="search">Search,</h1>
-				</div>
-				<div class="tile is-parent is-12">
+				</div> -->
+	<!-- <div class="tile is-parent is-12">
 					<h1 class="watch">Watch,</h1>
-				</div>
-				<div class="tile is-parent ">
+				</div> -->
+	<!-- <div class="tile is-parent ">
 					<h1 class="chill">Chill</h1>
-				</div>
-			</div>
-			<div class="hero-body has-text-centered">
+				</div> -->
+
+	<!-- </div> -->
+
+	<!-- <div class="hero-body has-text-centered">
 				<p class="intro">
 					Do you love movies?
 					<br>
@@ -46,15 +66,38 @@
 					<br>
 					Click "Search" to begin!
 				</p>
-			</div>
-		</div>
-	</section>
+			</div> -->
+
+	<!-- </div>
+		</div> -->
+	<!-- </section> -->
 
 	<main class="tile is-ancestor">
 		<div class="tile is-vertical box background">
+
+			<div class="tile-is-parent">
+				<div class="hero is-fullheight marquee">
+					<!-- <div class="hero-head"></div> -->
+					<div class="hero-body">
+
+						<!-- <figure class="image is-128x128"> -->
+							<img src="./assets/images/Project-5by4.png" class="logo">
+						<!-- </figure> -->
+
+					</div>
+					<!-- <div class="hero-foot"></div> -->
+				</div>
+			</div>
+
+
+
 			<div class="tile is-parent btn-background">
-				<button class="button has-text-black ticket is-rounded is-size-4 has-text-weight-bold" style="width: 100%" id="find-movie-btn">Find
+
+				<button class="button has-text-black ticket is-rounded is-size-4 has-text-weight-bold" style="width: 100%"
+					id="find-movie-btn">Find
 					Movie</button>
+
+
 				<div child="tile is-child box">
 					<div class="columns">
 						<!-- Search Criteria -->
@@ -221,8 +264,8 @@
 											</div>
 										</div>
 									</div> -->
-									<input id="title-textbox" class="input" style="width: 40%"
-										type="text" placeholder="Search for a Title">
+									<input id="title-textbox" class="input" style="width: 40%" type="text"
+										placeholder="Search for a Title">
 								</section>
 								<footer class="modal-card-foot">
 									<button class="button is-medium is-fullwidth is-link is-rounded" id="search-genre">Search
@@ -233,10 +276,6 @@
 								</footer>
 							</div>
 						</div>
-
-
-
-
 					</div>
 				</div>
 			</div>
@@ -275,9 +314,11 @@
 			</div>
 			<div class="tile is-vertical is-parent">
 				<article class="tile is-child box is-12">
+
 					<div class="tile">
 						<h3 id="movie-title">Search a movie to see what it's all about!</h3>
 					</div>
+
 					<div class="tile">
 						<p id="description"></p>
 						<p id="released"></p>

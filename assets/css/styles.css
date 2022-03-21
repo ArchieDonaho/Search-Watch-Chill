@@ -1,5 +1,9 @@
 body {
   font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+  width: auto;
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
@@ -9,8 +13,6 @@ h1 {
   font-family: 'Vast Shadow', cursive;
   
 }
-
-
 
 p {
   font-size: 30px;
@@ -118,6 +120,14 @@ padding-bottom: 60px;
   background-image: url("../images/golden-ticket.jpg");
 }
 
+.logo {
+  /* background-image: url("../images/Project.png"); */
+  margin: auto;
+  padding: 0;
+ 
+}
+
+
 #genres {
   border-radius: 30px;
   padding: 10px 32px;
@@ -143,7 +153,7 @@ padding-bottom: 60px;
   font-weight: bold;
 }
 
-@media screen and (max-width: 980px) {
+/* @media screen and (max-width: 980px) {
   .search {
     margin-left: 100px;
     font-size: 80px;
@@ -181,7 +191,6 @@ padding-bottom: 60px;
   }
 }
 
-
 @media screen and (max-width: 575px) {
   p {
     font-size: 20px;
@@ -205,4 +214,4 @@ padding-bottom: 60px;
     color: black;
     font-style: italic;
   }
-}
+} */
