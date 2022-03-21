@@ -29,7 +29,7 @@ p {
 }
 
 .marquee {
-  background-image: url("../images/now-showing.jpg");
+  background-image: url("../images/new-hero.png");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -121,11 +121,12 @@ padding-bottom: 60px;
 }
 
 .logo {
-  /* background-image: url("../images/Project.png"); */
-  margin: auto;
-  padding: 0;
- 
-}
+  margin: 0;
+  padding: 40px 0 20px;
+  width: 400px;
+  /* max-width: 400px; */
+  height: auto;
+ }
 
 
 #genres {
@@ -153,18 +154,25 @@ padding-bottom: 60px;
   font-weight: bold;
 }
 
-/* @media screen and (max-width: 980px) {
+@media screen and (max-width: 980px) {
+
+  .logo {
+  margin: auto;
+  padding: 40px 0 20px;
+  width: 350px;
+  /* max-width: 350px; */
+  height: auto;
+  }
+
   .search {
     margin-left: 100px;
     font-size: 80px;
     position: absolute;
   }
-
   .watch {
     margin-left: 200px;
     font-size: 80px;
   }
-
   .chill {
     margin-left: 400px;
     font-size: 80px;
@@ -173,16 +181,22 @@ padding-bottom: 60px;
 }
 
 @media screen and (max-width: 768px) {
+  .logo {
+    margin: auto;
+    padding: 30px 0 20px;
+    width: 300px;
+    /* max-width: 300px; */
+    height: auto;
+    }
+  
   .search {
     margin-left: 60px;
     font-size: 60px;
   }
-  
   .watch {
     margin-left: 90px;
     font-size: 60px;
   }
-  
   .chill {
     margin-left: 120px;
     font-size: 60px;
@@ -192,26 +206,28 @@ padding-bottom: 60px;
 }
 
 @media screen and (max-width: 575px) {
-  p {
-    font-size: 20px;
-    padding-bottom: 20px;
-  }
+  .logo {
+    margin: 0;
+    padding: 20px 0 20px;
+    width: 150px;
+    /* max-width: 150px; */
+    height: auto;
+    }
+  
 
   .search {
     margin-left: 50px;
     font-size: 50px;
   }
-  
   .watch {
     margin-left: 70px;
     font-size: 50px;
 
   }
-  
   .chill {
     margin-left: 100px;
     font-size: 50px;
     color: black;
     font-style: italic;
   }
-} */
+} 
