@@ -14,11 +14,6 @@
 	<link
 		href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto&family=Staatliches&display=swap"
 		rel="stylesheet">
-
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Vast+Shadow&display=swap" rel="stylesheet">
-
 	<link rel="stylesheet" href="./assets/css/styles.css">
 </head>
 
@@ -42,8 +37,7 @@
 			<div class="tile is-parent btn-background">
 
 				<button class="button has-text-black ticket is-rounded is-size-4 has-text-weight-bold" style="width: 100%"
-					id="find-movie-btn">Find
-					Movie</button>
+					id="find-movie-btn">Search</button>
 
 
 				<div child="tile is-child box">
@@ -55,8 +49,9 @@
 							<div class="modal-card">
 								<header class="modal-card-head has-background-danger-dark">
 									<p
-										class="modal-card-title has-text-black has-text-weight-bold is-uppercase is-italic has-text-centered">
+										class="modal-card-title has-text-white has-text-weight-bold is-uppercase is-italic has-text-centered">
 										Find Your Movie!</p>
+										<button class="modal-close is-large absolute">Cancel</button>
 								</header>
 								<section class="modal-card-body">
 									<!-- Select Genre -->
@@ -66,7 +61,7 @@
 											<option value="12">Adventure</option>
 											<option value="16">Animation</option>
 											<option value="35">Comedy</option>
-											<option value="80">crime</option>
+											<option value="80">Crime</option>
 											<option value="99">Documentary</option>
 											<option value="18">Drama</option>
 											<option value="10751">Family</option>
@@ -83,147 +78,22 @@
 											<option value="37">Western</option>
 										</select>
 									</form>
-									<!-- <div class="dropdown">
-										<div class="dropdown-trigger">
-											<button id="dropdown-genre" class="button is-rounded" style="width: 180%" aria-controls="dropdown-menu"
-												aria-haspopup="true">
-												<span>Genre</span>
-												<span class="icon is-small">
-													<i class="fas fa-angle-down" aria-hidden="true"></i>
-												</span>
-											</button>
-										</div>
-										<div class="dropdown-menu" id="dropdown-menu" role="menu">
-											<div class="dropdown-content">
-												<div class="dropdown-item">
-													<a id="28">
-														<h5>Action</h5>
-													</a>
-												</div>
-												<hr class="dropdown-divider">
-												<div class="dropdown-item">
-													<a id="12">
-														<h5>Adventure</h5>
-													</a>
-												</div>
-												<hr class="dropdown-divider">
-												<div class="dropdown-item">
-													<a id="16">
-														<h5>Animation</h5>
-													</a>
-												</div>
-												<hr class="dropdown-divider">
-												<div class="dropdown-item">
-													<a id="35">
-														<h5>Comedy</h5>
-													</a>
-												</div>
-												<hr class="dropdown-divider">
-												<div class="dropdown-item">
-													<a id="80">
-														<h5>Crime</h5>
-													</a>
-												</div>
-												<hr class="dropdown-divider">
-												<div class="dropdown-item">
-													<a id="99">
-														<h5>Documentary</h5>
-													</a>
-												</div>
-												<hr class="dropdown-divider">
-												<div class="dropdown-item">
-													<a id="18">
-														<h5>Drama</h5>
-													</a>
-												</div>
-												<hr class="dropdown-divider">
-												<div class="dropdown-item">
-													<a id="10751">
-														<h5>Family</h5>
-													</a>
-												</div>
-												<hr class="dropdown-divider">
-												<div class="dropdown-item">
-													<a id="14">
-														<h5>Fantasy</h5>
-													</a>
-												</div>
-												<hr class="dropdown-divider">
-												<div class="dropdown-item">
-													<a id="36">
-														<h5>History</h5>
-													</a>
-												</div>
-												<hr class="dropdown-divider">
-												<div class="dropdown-item">
-													<a id="27">
-														<h5>Horror</h5>
-													</a>
-												</div>
-												<hr class="dropdown-divider">
-												<div class="dropdown-item">
-													<a id="10402">
-														<h5>Music</h5>
-													</a>
-												</div>
-												<hr class="dropdown-divider">
-												<div class="dropdown-item">
-													<a id="9648">
-														<h5>Mystery</h5>
-													</a>
-												</div>
-												<hr class="dropdown-divider">
-												<div class="dropdown-item">
-													<a id="10749">
-														<h5>Romance</h5>
-													</a>
-												</div>
-												<hr class="dropdown-divider">
-												<div class="dropdown-item">
-													<a id="878">
-														<h5>Science Fiction</h5>
-													</a>
-												</div>
-												<hr class="dropdown-divider">
-												<div class="dropdown-item">
-													<a id="10770">
-														<h5>TV Movie</h5>
-													</a>
-												</div>
-												<hr class="dropdown-divider">
-												<div class="dropdown-item">
-													<a id="53">
-														<h5>Thriller</h5>
-													</a>
-												</div>
-												<hr class="dropdown-divider">
-												<div class="dropdown-item">
-													<a id="10752">
-														<h5>War</h5>
-													</a>
-												</div>
-												<hr class="dropdown-divider">
-												<div class="dropdown-item">
-													<a id="37">
-														<h5>Western</h5>
-													</a>
-												</div>
-												<hr class="dropdown-divider">
-											</div>
-										</div>
-									</div> -->
-									<input id="title-textbox" class="input" style="width: 40%" type="text"
-										placeholder="Search for a Title">
+									<input id="title-textbox" class="input is-rounded is-medium m-r-5 is-pulled-right" style="width: 40%"
+										type="text" placeholder="Search for a Title">
 								</section>
 								<footer class="modal-card-foot">
 									<button class="button is-medium is-fullwidth is-link is-rounded" id="search-genre">Search
 										Genre</button>
 									<button class="button is-medium is-fullwidth is-link is-rounded" id="search-title">Search
 										Title</button>
-									<button class="modal-close">Cancel</button>
+									<!-- <button class="modal-close">Cancel</button> -->
 								</footer>
 							</div>
 						</div>
+
+
+
+
 					</div>
 				</div>
 			</div>
@@ -262,11 +132,9 @@
 			</div>
 			<div class="tile is-vertical is-parent">
 				<article class="tile is-child box is-12">
-
 					<div class="tile">
 						<h3 id="movie-title">Search a movie to see what it's all about!</h3>
 					</div>
-
 					<div>
 						<p id="description"></p>
 						<p id="released"></p>
@@ -281,8 +149,6 @@
 	</main>
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
 		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-	<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"
-		integrity="sha256-eTyxS0rkjpLEo16uXTS0uVCS4815lc40K2iVpWDvdSY=" crossorigin="anonymous"></script>
 	<script src="./assets/js/script.js"></script>
 </body>
 

@@ -1,12 +1,27 @@
-
-//omdb key
-// http://www.omdbapi.com/?i=tt3896198&apikey=a6453f4e
-
-// themoviedb key
-// https://api.themoviedb.org/3/search/movie?api_key=983c87bc5226584d6913b9818f37ade3
-
 //generate the array to save the movies
 var savedMovies = [];
+
+//deletes the saved movie when selected using the poster url
+var deleteMovie =  function(url){
+    //traverse the movie list to find the index of the movie
+    var index;
+    for(var i=0; i<savedMovies.length; i++){
+        if(savedMovies[i].includes(url)){
+            index = i;
+        }
+    }
+
+    //remove that index form the array
+    savedMovies.splice(index, 1);
+    console.log(savedMovies);
+
+    //save the movie list as a JSON string
+    localStorage.setItem("movies", JSON.stringify(savedMovies));
+    console.log("movies saved");
+
+    //re-display the movies
+    displaySavedMovie();
+}
 
 //display the saved movies
 var displaySavedMovie = function(){
@@ -33,10 +48,19 @@ var displaySavedMovie = function(){
 
         var image = $("<img>");
         image.attr("src", item[1])
-             .addClass("")
              .appendTo(figure);
+
+        var button = $("<button>");
+        button.addClass("delete delete-btn")
+            .attr("type", "button")
+            .appendTo(figure);
     })
 
+    //when the delete button is clicked, remove the movie from the list (this needs to load only after the saved movie icons are displayed or else it wouldnt work)
+    $(".delete-btn").on("click", function(){
+     //send the source image to the function to delete it from the list
+        deleteMovie($(this).siblings().attr("src"));
+    })
 }
 
 //save the movie of the save button is clicked
@@ -63,8 +87,6 @@ var saveMovie = function(imdbID, posterURL){
         savedMovies.splice(index, 1);
         savedMovies.unshift([imdbID, posterURL]);
     }
-
-    console.log(savedMovies);
     
     //if the movie list is too long, then delete the 10th item
     if(savedMovies.length > 10){
@@ -77,30 +99,9 @@ var saveMovie = function(imdbID, posterURL){
 
     // //then load it and display onto the webpage
     displaySavedMovie();
-
 }
 
-//{id: 28, name: 'Action'}
-//{id: 12, name: 'Adventure'}
-//{id: 16, name: 'Animation'}
-//{id: 35, name: 'Comedy'}
-//{id: 80, name: 'Crime'}
-//{id: 99, name: 'Documentary'}
-//{id: 18, name: 'Drama'}
-//{id: 10751, name: 'Family'}
-//{id: 14, name: 'Fantasy'}
-//{id: 36, name: 'History'}
-//{id: 27, name: 'Horror'}
-//{id: 10402, name: 'Music'}
-//{id: 9648, name: 'Mystery'}
-//{id: 10749, name: 'Romance'}
-//{id: 878, name: 'Science Fiction'}
-//{id: 10770, name: 'TV Movie'}
-//{id: 53, name: 'Thriller'}
-//{id: 10752, name: 'War'}
-//{id: 37, name: 'Western'}
-
-    //create and display the container for the button
+//create and display the container for the button
 var displaySaveButton = function(){
     var containerEl = $("#description").parent().parent();
     //if the button doesn't exist, create and display one
@@ -123,14 +124,15 @@ var getGenre = function(genreId){
         if(response.ok){
             //convert response
             response.json().then(function(data){
-                // console.log(data);
+                // debugger;
+                console.log(data);
 
-                //obtain a random movie from the list
+                //obtain a random index from the list using the length of the list
                 var movieId = Math.floor(Math.random() * data.results.length)
-                getMovieId(movieId)
+                //then, using the random number generated, select that index's movie id and send it to be displayed
+                console.log(data.results[movieId].id)
+                getMovieId(data.results[movieId].title)
             })
-        } else {
-            alert("Please Try Again")
         }
     })
 }
@@ -170,8 +172,6 @@ var getMovieDescription = function(movieName) {
                 //generate the save button
                 displaySaveButton();
             })
-        } else {
-            alert("could not retrieve description")
         }
     })
 }
@@ -185,8 +185,7 @@ var getMovieId = function(movieName){
         if(response.ok){
             //convert response
             response.json().then(function(data){
-                // console.log(data.results[0]);
-                
+                // console.log(data);
                 //display the title
                 $("#movie-title").text(data.results[0].original_title + " , IMDB: " + data.results[0].id)
                 //display the movie poster
@@ -196,8 +195,6 @@ var getMovieId = function(movieName){
                 //obtain the details of the movie
                 getMovieDescription(data.results[0].original_title);
             })
-        } else {
-            alert("Please Try Again")
         }
     })
 }
@@ -212,15 +209,12 @@ var getMovieVideo = function(movieId) {
             //convert response
             response.json().then(function(data){
                 // console.log(data);
-
                 //if there is a trailer for the movie available
                 if(data.results[0]){
                     //embed the trailer youtube video to the webpage
                     $("#trailer").attr("src", "https://www.youtube.com/embed/" + data.results[0].key)
                 } 
             })
-        } else {
-            alert("Please Try Again")
         }
     })
 } 
@@ -236,66 +230,47 @@ var getMoviePoster = function(movieId){
             //convert response
             response.json()
             .then(function(movie){
-                console.log(movie.imdb_id)
-                console.log(movie.poster_path);
-
-
+                // console.log(movie)
                 //display the movie poster to the html
                 $("#movie-poster").attr("src", "http://image.tmdb.org/t/p/w500/" + movie.poster_path);
-                //test display the card
-                // $(".test-save").attr("src", "http://image.tmdb.org/t/p/w500/" + movie.poster_path);
-
             })
-        } else {
-            alert("Please Try Again")
         }
     })
 }
 
+//load previously saved movies
+displaySavedMovie()
 
-// open and close find movie modal
+// open find-movie modal when clicked
 $("#find-movie-btn").click(function() {
     $(".modal").addClass("is-active")
 });
   
+// close find-movie modal when clicked
 $(".modal-close").click(function() {
     $(".modal").removeClass("is-active")
 });
 
-
-//when the search genre button is clicked
-$("#search-genre").click(function(){
-
-    var genreId = document.querySelector("select[name = 'genres']").value;
-    console.log(genreId);
-
-
-    getGenre(genreId);
-    // // console.log($("#dropdown-genre").text());
-    $(".modal").removeClass("is-active")
-});
-
-//when the search title button is clicked
-$("#search-title").click(function(){
-    getMovieId($("#title-textbox").val());
-    // console.log($("#title-textbox").val());
-    $(".modal").removeClass("is-active")
-});
-
-// dropdown for genre
+// dropdown the genre list when clicked on
 $(".dropdown").click(function(){
     $(".dropdown").addClass("is-active")
 });
 
-// change dropdown text to selected genre
+//when the search-genre button is clicked
+$("#search-genre").click(function(){
+    var genreId = document.querySelector("select[name = 'genres']").value;
+    //load a movie based on the genre
+    getGenre(genreId);
+    //remove the modal
+    $(".modal").removeClass("is-active")
+});
 
-function selectedGenre(){
-    $(".dropdown-content").removeClass("is-active");
-}
-
-$(".dropdown-item h5").click(function(){
-    var text = $(this).text();
-    $("#dropdown-genre").text(text);
+//when the search-title button is clicked
+$("#search-title").click(function(){
+    //load a movie based on the title
+    getMovieId($("#title-textbox").val());
+    //remove the modal
+    $(".modal").removeClass("is-active")
 });
 
 //when the save button is clicked, save the movie
@@ -320,14 +295,4 @@ $("#saved-movies").on("click", "img", function(){
     }
     //then display that movie to the user
     getMovieId(title);
-
 })
-
-//display previously saved movies
-displaySavedMovie()
-
-
-//temporary for testing
-var movie = "tron";
-// getMovieId(movie);
-// getGenre(37);
