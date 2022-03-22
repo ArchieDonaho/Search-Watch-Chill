@@ -20,6 +20,7 @@ p {
   text-align: center;
 } 
 
+
 .background  {
   background-image: url("../images/theatre-wallpaper.png");
 }
@@ -80,6 +81,14 @@ padding-bottom: 60px;
 
 .thumbnails {
   margin: 0 0 80px;
+}
+
+.column {
+  margin-bottom: 80px;
+}
+
+.image {
+padding-bottom: 30px;
 }
 
 .spacer {
