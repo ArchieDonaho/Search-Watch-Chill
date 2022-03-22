@@ -118,6 +118,8 @@ padding-bottom: 60px;
   font-family: 'Vast Shadow', cursive;
   font-size: 40px;  
   background-image: url("../images/golden-ticket.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .logo {
@@ -128,6 +130,20 @@ padding-bottom: 60px;
   height: auto;
  }
 
+#description, #released, #profits, #awards {
+  font-size: 20px;
+  padding: 10px;
+}
+
+#ratings {
+  text-align: center;
+  font-size: 22px;
+  padding: 20px;
+}
+
+#movie-title {
+  font-size: 25px;
+}
 
 #genres {
   border-radius: 30px;
