@@ -29,7 +29,7 @@ p {
 }
 
 .marquee {
-  background-image: url("../images/new-hero.png");
+  background-image: url("../images/NewProjectImage.jpeg");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -37,7 +37,7 @@ p {
   flex-wrap: wrap;
   align-items: flex-start;
   background-position: 80%;
-  image-rendering: optimizeQuality;
+  image-rendering: auto;
 }
 
 .hero-head {
@@ -98,6 +98,7 @@ padding-bottom: 60px;
 .modal-card-title {
   font-family: 'Vast Shadow', cursive;
   font-size: 30px;
+  text-shadow: 1px 1px 2px black;
 }
 
 .modal-card-body {
