@@ -21,15 +21,15 @@ p {
 }
 
 .marquee {
-  background-image: url("../images/NewProjectImage.jpeg");
+  background-image: url("../images/NewProjectImage-fit-hero.jpeg");
   background-size: cover;
   background-position: center;
-  display: flex;
+  /* display: flex;
   justify-content: center;
   flex-wrap: wrap;
   align-items: flex-start;
   background-position: 80%;
-  image-rendering: auto;
+  image-rendering: auto; */
 }
 
 .hero-head {
@@ -158,43 +158,6 @@ padding-bottom: 60px;
   /* min-width: 128px; */
   max-height: 500px;
 }
-
-
-@media screen and (max-width: 980px) {
-
-  .logo {
-  margin: auto;
-  padding: 40px 0 20px;
-  width: 350px;
-  /* max-width: 350px; */
-  height: auto;
-  }
-
-  .search {
-    margin-left: 100px;
-    font-size: 80px;
-    position: absolute;
-  }
-  .watch {
-    margin-left: 200px;
-    font-size: 80px;
-  }
-  .chill {
-    margin-left: 400px;
-    font-size: 80px;
-    font-style: italic;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .logo {
-    margin: auto;
-    padding: 30px 0 20px;
-    width: 300px;
-    /* max-width: 300px; */
-    height: auto;
-    }
-  } 
  
   
 
