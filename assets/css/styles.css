@@ -6,14 +6,6 @@ body {
   padding: 0;
 }
 
-h1 {
-  font-size: 60px;
-  color: black;
-  font-weight: boldest;
-  font-family: 'Vast Shadow', cursive;
-  
-}
-
 p {
   font-size: 30px;
   padding: 20px;
@@ -54,23 +46,6 @@ padding-bottom: 60px;
 .intro {
   margin-bottom: 200px;
   margin-right: 150px;
-}
-
-.search {
-  margin-top: 300px;
-  margin-left: 1000px;
-}
-
-.watch {
-  margin-left: 1000px;
-  margin-bottom: -50px;
-}
-
-.chill {
-  margin-left: 850px;
-  font-size: 180px;
-  color: rgb(167, 167, 167);
-  font-style: italic;
 }
 
 .saved-search {
@@ -120,13 +95,14 @@ padding-bottom: 60px;
 }
 
 .btn {
-  /* font-family: 'Vast Shadow', cursive; */
-  font-size: 30px;  
+  font-size: 24px;
+  font-weight: bolder;  
   background-image: url("../images/golden-ticket.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 50px;
   width: 100%;
+  padding: 10px;
 }
 
 .logo {
@@ -177,6 +153,13 @@ padding-bottom: 60px;
   font-weight: bold;
 }
 
+#movie-poster {
+  height: auto;
+  /* min-width: 128px; */
+  max-height: 500px;
+}
+
+
 @media screen and (max-width: 980px) {
 
   .logo {
@@ -211,46 +194,7 @@ padding-bottom: 60px;
     /* max-width: 300px; */
     height: auto;
     }
-  
-  .search {
-    margin-left: 60px;
-    font-size: 60px;
-  }
-  .watch {
-    margin-left: 90px;
-    font-size: 60px;
-  }
-  .chill {
-    margin-left: 120px;
-    font-size: 60px;
-
-    font-style: italic;
-  }
-}
-
-@media screen and (max-width: 575px) {
-  .logo {
-    margin: 0;
-    padding: 20px 0 20px;
-    width: 150px;
-    /* max-width: 150px; */
-    height: auto;
-    }
+  } 
+ 
   
 
-  .search {
-    margin-left: 50px;
-    font-size: 50px;
-  }
-  .watch {
-    margin-left: 70px;
-    font-size: 50px;
-
-  }
-  .chill {
-    margin-left: 100px;
-    font-size: 50px;
-    color: black;
-    font-style: italic;
-  }
-} 
