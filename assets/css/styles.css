@@ -1,0 +1,163 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+  width: auto;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  font-size: 30px;
+  padding: 20px;
+  text-align: center;
+} 
+
+.background  {
+  background-image: url("../images/theatre-wallpaper.png");
+}
+
+.btn-background {
+  background-image: url("../images/theatre-wallpaper.png");
+}
+
+.marquee {
+  background-image: url("../images/NewProjectImage-fit-hero.jpeg");
+  background-size: cover;
+  background-position: center;
+  /* display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  background-position: 80%;
+  image-rendering: auto; */
+}
+
+.hero-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.hero-body {
+margin: auto;
+padding-bottom: 60px;
+}
+
+.intro {
+  margin-bottom: 200px;
+  margin-right: 150px;
+}
+
+.saved-search {
+  margin-top: 20px;
+  margin-bottom: 60px;
+}
+
+.thumbnails {
+  margin: 0 0 80px;
+}
+
+.column {
+  margin-bottom: 80px;
+}
+
+.spacer {
+  background-image: url("../images/theatre-wallpaper.png");
+}
+
+.icon {
+  height: 20em;
+  width: 20em;
+}
+
+.modal-card-head {
+  background-image: url("../images/popcorn.png");
+}
+
+.modal-card-title {
+  font-family: 'Vast Shadow', cursive;
+  font-size: 30px;
+  text-shadow: 1px 1px 2px black;
+}
+
+.modal-card-body {
+  background-image: url("../images/golden-ticket-jpg");
+}
+
+.modal-card-foot {
+  background-image: url("../images/curtains.png");
+}
+
+.ticket {
+  background-image: url("../images/golden-ticket.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.btn {
+  font-size: 24px;
+  font-weight: bolder;  
+  background-image: url("../images/golden-ticket.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50px;
+  width: 100%;
+  padding: 10px;
+}
+
+.logo {
+  margin: 0;
+  padding: 40px 0 20px;
+  width: 400px;
+  /* max-width: 400px; */
+  height: auto;
+ }
+
+#description, #released, #profits, #awards {
+  font-size: 20px;
+  padding: 10px;
+}
+
+#ratings {
+  text-align: center;
+  font-size: 22px;
+  padding: 20px;
+}
+
+#movie-title {
+  font-size: 25px;
+}
+
+#genres {
+  border-radius: 30px;
+  padding: 10px 32px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  background-color: gold;
+  color: black;
+  font-size: 13px;
+  font-family: 'Vast Shadow', cursive;
+  font-weight: bold;
+}
+
+#title-textbox {
+  border-radius: 30px;
+  padding: 20px 32px;
+  float: right;
+  margin-top: -40px;
+  font-family: 'Vast Shadow', cursive;
+  background-color: gold;
+  font-size: 13px;
+  color: black;
+  font-weight: bold;
+}
+
+#movie-poster {
+  height: auto;
+  /* min-width: 128px; */
+  max-height: 500px;
+}
+ 
+  
+

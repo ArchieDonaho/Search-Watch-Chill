@@ -1,13 +1,19 @@
-# Search, Watch, Chill. (working title)
+# Search, Watch, Chill.
 
-User story:
-As a viewer of movies,
-I want to be able to search for movies based on selected criteria
-When a movie is found,
-I want to see a movie poster, trailer, and summary of said movie.
-When i click save,
-I want the movie to be saved in the recommended section
-Potential API's:
-http://www.omdbapi.com/
-https://developers.themoviedb.org/4/getting-started/authorization
-https://developer.imdb.com/documentation/
+## User story:
+<p>As a viewer of movies,<br>
+I want to be able to search for movies based on selected criteria.<br>
+When a movie is found,<br>
+I want to see a movie poster, trailer, and summary of said movie.<br>
+When i click save,<br>
+I want the movie to be saved in the recommended section.</p><br>
+
+![](./assets/images/NewProjectImage-fit-hero.jpeg)
+
+API's used:
+
+>http://www.omdbapi.com/
+
+>https://developers.themoviedb.org/4/getting-started/authorization</p>
+
+
