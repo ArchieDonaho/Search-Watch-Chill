@@ -119,6 +119,12 @@ padding-bottom: 60px;
    right: 0;
  }
 
+ .delete {
+   position: absolute;
+   top: 0%;
+   right: 0%;
+ }
+
 #description, #released, #profits, #awards {
   font-size: 20px;
   padding: 10px;
