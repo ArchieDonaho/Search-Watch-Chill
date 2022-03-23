@@ -139,7 +139,7 @@ var getGenre = function(genreId){
 
 //get a detailed description of the movie
 var getMovieDescription = function(movieName) {
-    link = "http://www.omdbapi.com/?apikey=a6453f4e&t=" + movieName + "&plot=short";
+    link = "https://www.omdbapi.com/?apikey=a6453f4e&t=" + movieName + "&plot=short";
 
     fetch(link).then(function(response){
         //if we get a 2XX status code
